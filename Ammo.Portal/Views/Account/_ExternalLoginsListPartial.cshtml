@@ -1,0 +1,40 @@
+﻿@model Ammo.Portal.Models.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+<h1>Sign in with other accounts.</h1>
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() == 0)
+    {
+        <div>
+            <p style="padding:1em;">
+                Hot damn! At this time our API login servers are experiencing an outage... Please check back soon.
+            </p>
+        </div>
+    }
+    else
+    {
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-12 col-sm-12 inline-block">
+                    <div class="icon-circle inline-block">
+                        <button type="submit" class="btn ifacebook icon-circle-button" name="provider" value="Facebook" title="Facebook"><i class="fa fa-facebook"></i></button>
+                    </div>
+                    <div class="icon-circle inline-block">
+                        <button type="submit" class="btn itwitter icon-circle-button" name="provider" value="Twitter" title="Twitter"><i class="fa fa-twitter"></i></button>
+                    </div>
+                    <div class="icon-circle inline-block">
+                        <button type="submit" class="btn itrello icon-circle-button" name="provider" value="Trello" title="Trello"><i class="fa fa-trello"></i></button>
+                    </div>
+                    <div class="icon-circle inline-block">
+                        <button type="submit" class="btn igithub icon-circle-button" name="provider" value="GitHub" title="GitHub"><i class="fa fa-github"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div id="socialLoginList">
+            </div>
+        }
+    }
+}

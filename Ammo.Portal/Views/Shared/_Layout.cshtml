@@ -1,0 +1,103 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html lang="en" ng-app="AMMO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="John Nolan, Rio">
+    <meta name="description" content="Bullet journal, online project management tool">
+    <meta name="keywords" content="bullet journal, project, management, workflow, planning, ammo, agile">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="~/Assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="57x57" href="~/Assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="~/Assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/Assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/Assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/Assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/Assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/Assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/Assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="~/Assets/favicon/manifest.json">
+    <!-- SITE TITLE -->
+    <title>Ammo - Bullet Journal Zen</title>
+    <!-- Third Party CSS including Bootstrap & custom icons -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/AMMO.ThirdParty.css" />
+    <link rel="stylesheet" href="~/Content/AMMO.Fonts.css" />
+    <link rel="stylesheet" href="~/Content/AMMO.Menu.css" />
+    <link rel="stylesheet" href="~/Content/AMMO.General.css" />
+    <link rel="stylesheet" href="~/Content/AMMO.Responsive.css" />
+    @Scripts.Render("~/bundles/jquery")
+    <!--[if lt IE 9]>
+        <script src="/Scripts/API/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- =========================
+       PRE LOADER
+      ============================== -->
+    <div class="preloader">
+        <div class="status">
+            <div class="loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- =========================
+     NAVIGATION
+    ============================== -->
+    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- LOGO -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="~/Assets/images/logo.png" alt="LOGO">
+                </a>
+            </div>
+            @if (!Request.IsAuthenticated)
+            {
+                <div class="navbar-collapse collapse" id="alexis-navigation">
+                    <!-- NAVIGATION LINK -->
+                    <ul class="nav navbar-nav navbar-right main-navigation" id="internal-scroll">
+                        <li>
+                            @Html.ActionLink("Home", "Index", "Home")
+                        </li>
+                        <li>
+                            @Html.ActionLink("About", "Index", "Home", new { @section = "About" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("Features", "Index", "Home", new { @section = "Features" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("Workflow", "Index", "Home", new { @section = "Workflow" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("Pricing", "Index", "Home", new { @section = "Pricing" }, new { })
+                        </li>
+                        <li>
+                           @Html.ActionLink("Contact", "Index", "Home", new { @section = "Contact" }, new { })
+                        </li>
+                    </ul>
+                </div>
+            }
+        </div><!-- /END CONTAINER -->
+        @Html.Partial("_LoginPartial")
+    </div><!-- /END NAIVATION -->
+    @RenderBody()
+    <div class="md-overlay"></div>
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/base")
+    <script src="~/Scripts/API/slidebars.min.js"></script>
+    <script src="~/Scripts/Controllers/AMMO.Menu.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

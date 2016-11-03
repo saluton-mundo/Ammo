@@ -1,0 +1,88 @@
+﻿@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+    }
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <div class="menu-icon">
+                <img src="~/Assets/icons/menu.png" class="js-toggle-right-slidebar" />
+            </div>
+        </li>
+    </ul>
+    <div off-canvas="slidebar-2 right shift">
+        <div class="slide-out-menu">
+            <a class="slide-out-menu-item-div-a" href="@Url.Action("Index", "Journals")">
+                <div class="slide-out-menu-item slide-menu-border-left-red">
+                    <div class="slide-menu-item-div">
+                        <img src="~/Assets/icons/three-books.png" class="slide-menu-item-div-img">
+                        <p class="slide-menu-item-div-p">
+                            Journal Library
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <a class="slide-out-menu-item-div-a" href="@Url.Action("Index", "Calendar")">
+                <div class="slide-out-menu-item slide-menu-border-left-green">
+                    <div class="slide-menu-item-div">
+                        <img src="~/Assets/icons/calendar.png" class="slide-menu-item-div-img">
+                        <p class="slide-menu-item-div-p">
+                            Calendar
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <a class="slide-out-menu-item-div-a" href="javascript:void(0)">
+                <div class="slide-out-menu-item slide-menu-border-left-purple">
+                    <div class="slide-menu-item-div">
+                        <img src="~/Assets/icons/bullets.png" class="slide-menu-item-div-img">
+                        <p class="slide-menu-item-div-p">
+                            Bullet Collections
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <a class="slide-out-menu-item-div-a" href="javascript:void(0)">
+                <div class="slide-out-menu-item slide-menu-border-left-yellow">
+                    <div class="slide-menu-item-div">
+                        <img src="~/Assets/icons/files.png" class="slide-menu-item-div-img">
+                        <p class="slide-menu-item-div-p">
+                            Ammo Cloud&trade; Storage
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <a class="slide-out-menu-item-div-a" href="javascript:void(0)">
+                <div class="slide-out-menu-item slide-menu-border-left-grey">
+                    <div class="slide-menu-item-div">
+                        <img src="~/Assets/icons/box.png" class="slide-menu-item-div-img">
+                        <p class="slide-menu-item-div-p">
+                            Ammo Cache
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <a class="slide-out-menu-item-div-a" href="@Url.Action("Index", "Manage")">
+                <div class="slide-out-menu-item slide-menu-border-left-grey">
+                    <div class="slide-menu-item-div">
+                        <img src="~/Assets/icons/settings.png" class="slide-menu-item-div-img">
+                        <p class="slide-menu-item-div-p">
+                            Settings
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <a class="slide-out-menu-item-div-a" href="javascript:document.getElementById('logoutForm').submit()">
+                <div class="slide-out-menu-item slide-menu-border-left-grey">
+                    <div class="slide-menu-item-div">
+                        <img src="~/Assets/icons/signout.png" class="slide-menu-item-div-img">
+                        <p class="slide-menu-item-div-p">
+                            Sign Out
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+}

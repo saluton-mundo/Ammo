@@ -1,0 +1,9 @@
+F:\Ammo\Ammo.Portal\Ammo.Domain\bin\Debug\Ammo.Domain.dll
+F:\Ammo\Ammo.Portal\Ammo.Domain\bin\Debug\Ammo.Domain.pdb
+F:\Ammo\Ammo.Portal\Ammo.Domain\bin\Debug\Dapper.dll
+F:\Ammo\Ammo.Portal\Ammo.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+F:\Ammo\Ammo.Portal\Ammo.Domain\bin\Debug\Dapper.xml
+F:\Ammo\Ammo.Portal\Ammo.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+F:\Ammo\Ammo.Portal\Ammo.Domain\obj\Debug\Ammo.Domain.dll
+F:\Ammo\Ammo.Portal\Ammo.Domain\obj\Debug\Ammo.Domain.pdb
+F:\Ammo\Ammo.Portal\Ammo.Domain\obj\Debug\Ammo.Domain.csprojResolveAssemblyReference.cache

@@ -1,0 +1,46 @@
+﻿@model Ammo.Portal.Models.ExternalLoginConfirmationViewModel
+
+<div class="container nav-offset-margin">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h3>Associate your @ViewBag.LoginProvider account.</h3>
+            <br />
+            @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "contact-form", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <p class="text-info">
+                    You've successfully authenticated with <strong>@ViewBag.LoginProvider</strong>.
+                    Please confirm your email for this site below and click the Complete button to finish
+                    logging in.
+                </p>
+                <div class="form-group confirmation-email-form-group ">
+                    @Html.LabelFor(m => m.Email, "Confirm Email:", new { @class = "col-md-1 control-label confirm-email-field-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "input-field confirmation-email-field", @placeholder = "Confirm your email here..." })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12 col-sm-12">
+                        <input type="submit" class="btn standard-button green-button" value="Complete Registration" />
+                        <a href="~/Account/Login" class="btn standard-button red-outline">CANCEL</a>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="four-lines">
+            <div class="line red-line-bottom">
+            </div>
+            <div class="line green-line-bottom">
+            </div>
+            <div class="line purple-line-bottom">
+            </div>
+            <div class="line yellow-line-bottom">
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

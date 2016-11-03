@@ -1,0 +1,281 @@
+/*---------------------------------------
+   PAGE 
+-----------------------------------------*/
+.journal-page {
+}
+
+.journal-page-canvas {
+    height: 100vh;
+    padding-top: 75px;
+    background: #f9f9f9;
+    overflow-y: auto;
+}
+
+.journal-page-number {
+    color: #bbb;
+    position: absolute;
+    left: 50%;
+    bottom: 1%;
+}
+
+.previous-page {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 50px;
+    z-index: 10;
+}
+
+.next-page {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 50px;
+    z-index: 10;
+}
+
+/*---------------------------------------
+   TOOLBOX
+-----------------------------------------*/
+.toolbox-menu {
+    height: 160px;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    background: #FFF;
+    display: inline-block;
+}
+
+.toolbox-menu-item {
+    display: inline-block;
+    width: 100px !important;
+    margin: 30px;
+    margin-top: 10px;
+    text-align: center;
+    cursor: move;
+}
+
+.toolbox-menu-item-img {
+    display: inline-block;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+}
+
+.toolbox-menu-item-text {
+    color: #1f1e1e;
+}
+
+.toolbox-menu-layout-menu-item-img {
+    vertical-align: middle;
+    width: 60%;
+    padding-top: 18px;
+}
+
+#bullets-menu,
+#layouts-menu,
+#signifiers-menu {
+    display: none;
+}
+
+/*---------------------------------------
+   BULLET LIST LAYOUTS
+-----------------------------------------*/
+.bullet-list-draggable {
+    width: 100%;
+    padding: 15px;
+}
+
+.bullet-list-resizable {
+    width: 100%;
+    padding: 15px;
+}
+
+.bullet-list-clickable {
+    width: 100%;
+    padding: 15px;
+}
+
+.bullet {
+    height: 35px;
+    width: 35px;
+    margin: 10px;
+    border: 1px dashed #b5b5b5;
+    cursor: pointer;
+}
+
+.text {
+    height: 35px;
+    margin: 10px;
+    border: 1px dashed #b5b5b5;
+    padding: 0;
+}
+
+.bullet-text-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0;
+    text-indent: 10px;
+}
+
+.signifier {
+    height: 35px;
+    width: 35px;
+    margin: 10px;
+    border: 1px dashed #b5b5b5;
+}
+
+.bullet-list-single-col {
+    height: 35px;
+    width: 100%;
+    text-align: center;
+    line-height: 5px;
+}
+
+.bullet-img {
+    height: 35px;
+    width: 35px;
+    padding: 0px;
+    left: 1px;
+    position: absolute;
+    top: 0px;
+}
+
+.bullet-list-two-col-simple {
+}
+
+.bullet-list-three-col-classic {
+}
+
+.bullet-list-three-col-centered {
+}
+/*-----------------------------------------
+    5 JOURNAL LIBRARY
+------------------------------------------*/
+.nav-offset-margin {
+    margin-top: 75px;
+    padding-top: 50px;
+}
+
+.shelf {
+    min-height: 300px;
+    border-bottom: 30px solid #a5a5a5;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    top: -15px;
+    padding: 1em;
+    padding-bottom: 0;
+}
+
+.shelf-journal {
+    vertical-align: bottom;
+    height: 100%;
+    min-height: 250px;
+    padding-top: 1em;
+    cursor: pointer;
+}
+
+.shelf-journal-cover-img {
+    height: 270px;
+    vertical-align: bottom;
+    cursor: pointer;
+}
+
+.shelf-journal-placeholder {
+    min-height: 270px;
+    width: 193px;
+    border: 2px dashed #b5b5b5;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.shelf-journal-placeholder-img {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.shelf-journal-placeholder-h2 {
+    font-size: 1.5em;
+    color: #b5b5b5;
+    font-weight: 500;
+    line-height: 1.5;
+    font-family: inherit;
+}
+
+.shelf-journal-placeholder-h3 {
+    font-size: 22px;
+    line-height: 48px;
+    font-weight: 400;
+    color: #bbb;
+}
+
+.journal-modal-detail {
+    padding: 2em;
+    padding-left: 1em;
+}
+
+.journal-modal-detail-bottom-div {
+    padding-bottom: 2em;
+}
+
+.journal-modal-detail-button {
+    margin: 0 auto;
+    margin-bottom: 10px !important;
+    margin-top: 15px !important;
+    width: 75%;
+}
+
+.journal-modal-detail-button-open {
+    font-weight: 700;
+}
+
+.journal-modal-detail-cover-img {
+    height: auto !important;
+    width: 100% !important;
+}
+
+.create-journal-title {
+    line-height: 49px;
+    width: 100%;
+    border: 1px solid #e0dbdb;
+    border-radius: 4px;
+    text-align: center;
+    padding: 0 10px 0 10px;
+    margin-bottom: 24px;
+}
+
+.create-journal-textarea {
+    width: 100%;
+    resize: none;
+    max-height: 225px;
+    line-height: 27px;
+    padding-top: 15px;
+    border: 1px solid #e0dbdb;
+    border-radius: 4px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 24px;
+}
+
+.journals-journal-title {
+    min-width: 216px;
+    text-align: center;
+}
+
+.journals-journal-link {
+    width: 30px;
+    float: left;
+    margin-left: -10px;
+    margin-bottom: 10px;
+    padding: 2px;
+    border-radius: 50%;
+    background: none;
+    border: 1px solid #444;
+}
+.journals-journal-link:hover {
+    border-color: #fc5f45;
+}

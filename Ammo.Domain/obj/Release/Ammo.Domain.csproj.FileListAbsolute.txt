@@ -1,0 +1,8 @@
+F:\Ammo\Ammo.Portal\Ammo.Domain\bin\Release\Ammo.Domain.dll
+F:\Ammo\Ammo.Portal\Ammo.Domain\bin\Release\Ammo.Domain.pdb
+F:\Ammo\Ammo.Portal\Ammo.Domain\bin\Release\Dapper.dll
+F:\Ammo\Ammo.Portal\Ammo.Domain\bin\Release\Microsoft.AspNet.Identity.Core.dll
+F:\Ammo\Ammo.Portal\Ammo.Domain\bin\Release\Dapper.xml
+F:\Ammo\Ammo.Portal\Ammo.Domain\bin\Release\Microsoft.AspNet.Identity.Core.xml
+F:\Ammo\Ammo.Portal\Ammo.Domain\obj\Release\Ammo.Domain.dll
+F:\Ammo\Ammo.Portal\Ammo.Domain\obj\Release\Ammo.Domain.pdb

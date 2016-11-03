@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Ammo.Domain.Entities.Journal>
+
+@{
+    ViewBag.Title = "Library";
+    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row nav-offset-margin">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="heading-block">
+                <h3>
+                    Journals
+                </h3>
+            </div> <!-- /.heading-block -->
+        </div>
+        @if (Model == null || Model.Count() < 1)
+        {
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a class="md-trigger" href="@Url.Action("Create", "Journal")">
+                        <div class="shelf-journal-placeholder">
+                            <img class="shelf-journal-placeholder-img" src="~/Assets/icons/insert-page.png" />
+                            <h3 class="shelf-journal-placeholder-h3">Create New</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+        else
+        {
+            foreach (Ammo.Domain.Entities.Journal journal in Model)
+            {
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="col-lg-1 col-md-1 col-sm-12">
+                        <a class="journals-journal-link " href="javascript:void(0)" title="Move">
+                            <span class="fa fa-th"></span>
+                        </a>
+                        <br />
+                        <a class="journals-journal-link " href="/Journal/@journal.JournalId" title="Open">
+                            <span class="fa fa-eye"></span>
+                        </a>
+                        <br />
+                        <a class="journals-journal-link " href="/Journal/Edit/@journal.JournalId" title="Edit">
+                            <span class="fa fa-pencil"></span>
+                        </a>
+                        <br />
+                        <a class="journals-journal-link " href="/Bookmark/List/@journal.JournalId" title="Bookmarks">
+                            <span class="fa fa-bookmark"></span>
+                        </a>
+                        <br />
+                        <a class="journals-journal-link md-trigger" href="/Journal/Delete/@journal.JournalId" data-ajax="true" data-ajax-success="JOURNAL.OnDeleteSuccess" data-modal="js-ammo-modal" title="Archive">
+                            <span class="fa fa-trash-o"></span>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <a href="javascript:void(0)" class="js-journal-detail">
+                            <img class="shelf-journal-cover-img" src="@Url.Action("JournalCoverGet", "Image", new { ImageName = journal.CoverUrl })" />
+                        </a>
+                        <center><h6 class="journals-journal-title">@journal.Title</h6></center>
+                    </div>
+                </div>
+            }
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="col-lg-1 col-md-1 col-sm-12"></div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a class="md-trigger" href="@Url.Action("Create", "Journal")">
+                        <div class="shelf-journal-placeholder">
+                            <img class="shelf-journal-placeholder-img" src="~/Assets/icons/insert-page.png" />
+                            <h3 class="shelf-journal-placeholder-h3">Create New</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+        <!-- TODO if view model, bookmark count is > 0 then render /Bookmark/List partial -->
+    </div>
+</div>

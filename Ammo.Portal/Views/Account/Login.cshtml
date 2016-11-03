@@ -1,0 +1,63 @@
+﻿@using Ammo.Portal.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Sign In";
+}
+<section class="getstarted fixed-bg" id="home">
+    <div class="container" style="padding-top:10%;">
+        <div class="row no-gutters frosted-white-bg">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <h1>Sign <b class="green-text">In</b></h1>
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "contact-form get-started-form-div", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <div class="col-md-12 col-sm-12">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "input-field input-field-green", @placeholder = "Enter your registered email..." })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12 col-sm-12">
+                            @Html.PasswordFor(m => m.Password, new { @class = "input-field input-field-green", @placeholder = "Enter your Ammo password..." })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="checkbox">
+                                <label style="font-size: 2em">
+                                    <input type="checkbox" name="RememberMe" id="RememberMe" value="false" />
+                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                    <small class="remember-me-label">Remember Me?</small>
+                                </label>    
+                            </div>      
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12 col-sm-12">
+                            <input type="submit" value="Sign In" class="btn btn-default standard-button green-button full-width" />
+                        </div>
+                    </div>
+                    <p>
+                        <b>Not Part of Ammo? </b> @Html.ActionLink("Sign up here", "Register")
+                    </p>
+                    @* Enable this once you have account confirmation enabled for password reset functionality
+                        <p>
+                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                        </p>*@
+                }
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <section id="socialLoginForm">
+                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                </section>
+            </div>
+            <div class="line green-line-bottom"></div>
+        </div>
+    </div>
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

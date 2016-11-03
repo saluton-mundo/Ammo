@@ -1,0 +1,35 @@
+﻿@model Ammo.Portal.Models.JournalDeleteViewModel
+@{
+    Layout = null;
+}
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 journal-modal-detail">
+            <p class="modal-dialog-p">Are you sure you wish to archive this Journal?</p>
+        @using (Html.BeginForm("Archive", "Journal", FormMethod.Post, new { }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+            @Html.HiddenFor(m => m.JournalId)
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn standard-button red-button">Archive Journal</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" onclick="MODAL.Hide" class="btn btn-default standard-button green-outline md-close">Close</button>
+                    </div>
+                </div> <!-- /.col -->
+            </div> <!-- /.form-group -->
+        }
+    </div>
+</div>
+<div class="four-lines">
+    <div class="line red-line-bottom">
+    </div>
+    <div class="line green-line-bottom">
+    </div>
+    <div class="line purple-line-bottom">
+    </div>
+    <div class="line yellow-line-bottom">
+    </div>
+</div>

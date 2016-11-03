@@ -1,0 +1,12 @@
+01/10/2016 22:48:43	This log contains information about the import operation of the script 'Generate.sql' into project 'Ammo.Database' on computer 'AWAKE' by user'John.
+01/10/2016 22:48:43	Started importing file: F:\Identity.NoEF-master\Identity.Database\Generate.sql 
+01/10/2016 22:48:43	File name F:\Identity.NoEF-master\Identity.Database\Generate.sql (size: 3954)
+01/10/2016 22:48:43	Parsing import script
+01/10/2016 22:48:43	Total number of batches in script: 12
+01/10/2016 22:48:43	Total number of statements in script: 12
+01/10/2016 22:48:43	The script was successfully imported into the project.
+01/10/2016 22:48:43	Analyzing schema objects...
+01/10/2016 22:48:43	Scanning project for duplicate elements
+01/10/2016 22:48:43	Finished duplicate element processing
+01/10/2016 22:48:43	A summary of the import was saved to the following location: F:\Ammo\Ammo.Portal\Ammo.Database\Import Script Logs\Generate_sql_20161001104843.log
+01/10/2016 22:48:43	Click Finish to continue...

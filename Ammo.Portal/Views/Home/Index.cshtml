@@ -1,0 +1,689 @@
+﻿@{ 
+    Layout = null;    
+}
+<!DOCTYPE html>
+<html lang="en" ng-app="AMMO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="John Nolan, Rio">
+    <meta name="description" content="Bullet journal, online project management tool">
+    <meta name="keywords" content="bullet journal, project, management, workflow, planning, ammo">
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="57x57" href="~/Assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="~/Assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/Assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/Assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/Assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/Assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/Assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/Assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="~/Assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="~/Assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- SITE TITLE -->
+    <title>Ammo - Bullet Journal Zen</title>
+    <!-- Third Party CSS including Bootstrap & custom icons -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/AMMO.Fonts.css">
+    <link rel="stylesheet" href="~/Content/third-party.css" />
+    <link rel="stylesheet" href="~/Content/AMMO.General.css" />
+    <link rel="stylesheet" href="~/Content/AMMO.Responsive.css" />
+    <!--[if lt IE 9]>
+        <script src="/Scripts/API/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- =========================
+     PRE LOADER
+    ============================== -->
+    <div class="preloader">
+        <div class="status">
+            <div class="loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- =========================
+     SECTION: HOME / HOMEPAGE
+    ============================== -->
+    <section class="home fixed-bg" id="home">
+        <div class="color-overlay">
+            <!-- COLOR OVERLAY -->
+            <!-- NAVIGATION -->
+            <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- NAVBAR EXPAND COLLAPSE ON MOBILE -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#alexis-navigation">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon icon-menu"></span>
+                        </button>
+                        <!-- LOGO -->
+                        <a class="navbar-brand" href="index.html">
+                            <img src="~/Assets/images/logo.png" alt="LOGO">
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="alexis-navigation">
+                        <!-- NAVIGATION LINK -->
+                        <ul class="nav navbar-nav navbar-right main-navigation" id="internal-scroll">
+                            <li>
+                                <a href="#home">Home</a>
+                            </li>
+                            <li>
+                                <a href="#section1">About</a>
+                            </li>
+                            <li>
+                                <a href="#section2">Features</a>
+                            </li>
+                            <li>
+                                <a href="#section5">Work flow</a>
+                            </li>
+                            <li>
+                                <a href="#section6">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="#section10">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /END CONTAINER -->
+            </div>
+            <!-- /END NAIVATION -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 col-md-12">
+                        <img class="text-center" src="~/Assets/images/logo-clear.png" alt="Ammo logo" />
+                        <!-- INTRO HEADING -->
+                        <h1 class="intro white-text text-center">Give your project some <b>firepower</b></h1>
+                        <!-- CALL TO ACTION -->
+                        <div class="cta smooth-scroll">
+                            <a href="/Account/Register" class="btn btn-default standard-button red-button"><img src="~/Assets/icons/fire.png" class="get-fired-up-button-img" height="25" width="25"> Get fired up now</a>
+                            <b class="white-text">or</b> 
+                            <a href="/Account/Login" class="btn btn-default standard-button green-outline sign-in-button"> Sign In</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <!-- 3 FEATURES ON HOMEPAGE -->
+                    <div class="home-features">
+                        <!-- SINGLE FEATURE -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="single-feature">
+                                <div class="icon green-text">
+                                    <span class="icon icon-money-regular"></span>
+                                    <!-- ICON -->
+                                </div>
+                                <h6 class="green-text uppercase">Save yourself money with a unique online planning system.</h6>
+                            </div>
+                        </div>
+                        <!-- SINGLE FEATURE -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="single-feature">
+                                <div class="icon purple-text">
+                                    <span class="icon icon-clock-regular"></span>
+                                    <!-- ICON -->
+                                </div>
+                                <h6 class="purple-text uppercase">Optimize your most important resource, your time.</h6>
+                            </div>
+                        </div>
+                        <!-- SINGLE FEATURE -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="single-feature">
+                                <div class="icon yellow-text">
+                                    <span class="icon icon-happy-smiley-streamline"></span>
+                                    <!-- ICON -->
+                                </div>
+                                <h6 class="yellow-text uppercase">Join the thousands of people who found their journal Zen.</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF 3 FEATURES -->
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+     SECTION: ABOUT US
+    ============================== -->
+    <section class="about-us" id="section1">
+        <div class="container">
+            <div class="row">
+                <!-- FEATURED IMAGE AREA -->
+                <div class="col-lg-6 visible-lg">
+                    <div class="featured-image red-gradient-overlay">
+                        <img src="~/Assets/images/journal.jpg" alt="a bullet journal with colourful designs, an iPad sit beside it showing a image gallery.">
+                        <!-- ABOUT US FEATURED IMAGE -->
+                        <div class="image-border">
+                        </div>
+                    </div>
+                </div>
+                <!-- ABOUT US BOX -->
+                <div class="col-lg-7 col-sm-12 overflow-box pull-right">
+                    <div class="about-box diffuse-shadow wow fadeInRight" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+
+                        <div class="about-content">
+                            <!-- SECTION NUMBER -->
+                            <div class="section-number">
+                                ?
+                            </div>
+                            <!-- SECTION HEADING -->
+                            <h2 class="section-heading text-left">The Bullet Journal</h2>
+
+                            <!-- PARAGRAPH -->
+                            <p class="text-left">
+                                Ammo provides a seamless transition from paper based Bullet Journals to the digital medium via both our beautiful Web and Mobile applications. Ammo<sup><small>&trade;</small></sup> is inspired by the <b>Bullet Journal</b> system created by the amazing <a href="http://www.rydercarroll.com/" target="_blank">Ryder Carroll</a>. The Bullet journal's focus is rapid logging of critical information, keeping planning clear and concise. Every journal contains four key components: topics, page numbers, short sentences, and bullets. You can learn about the system in detail straight from Ryder <a href="http://bulletjournal.com/get-started/" target="_blank">here</a>
+                                <br />
+                                <br /> Bullets have intrinsic meaning and can be tailored to suit different projects, tasks and work flows. Ammo provides collections of bullets to get you started - but the freedom to create your own using the <b>Ammo&trade; Bullet designer</b>. Create unlimited journals, each having an unlimited amount of pages. Organize them in the Ammo Library and create custom bullet collection for future journals.
+                            </p>
+                        </div>
+                        <div class="four-lines">
+                            <div class="line red-line-bottom">
+                            </div>
+                            <div class="line green-line-bottom">
+                            </div>
+                            <div class="line purple-line-bottom">
+                            </div>
+                            <div class="line yellow-line-bottom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+     SECTION: SERVICES
+    ============================== -->
+    <section class="our-focus bgcolor-2" id="section2">
+        <div class="container">
+            <!-- SECTION NUMBER -->
+            <div class="section-number centered-number">
+                GET
+            </div>
+            <!-- SECTION HEADER -->
+            <div class="section-header">
+                <h2>An arsenal of features</h2>
+                <div class="sub-heading">
+                    Ammo equips you with all the tools necessary for project and planning mastery.
+                </div>
+            </div>
+            <div class="row focuses">
+                <!-- SINGLE FOCUS COLUMN -->
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="single-focus white-bg diffuse-shadow red-line-bottom wow fadeInLeft" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+                        <!-- ICON -->
+                        <div class="icon red-text">
+                            <span class="icon icon-basic-postcard-multiple"></span>
+                        </div>
+                        <!-- HEADING -->
+                        <h5>Online Bullet Journals</h5>
+                        <!-- DETAILS -->
+                        <p>
+                            Create unlimited journals, organise and plan in a unique for every task imaginable. Integrate with your existing tools such as Trello.
+                        </p>
+                    </div>
+                </div>
+                <!-- SINGLE FOCUS COLUMN -->
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="single-focus white-bg diffuse-shadow green-line-bottom wow fadeInUp" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+                        <!-- ICON -->
+                        <div class="icon green-text">
+                            <span class="icon icon-basic-map"></span>
+                        </div>
+                        <!-- HEADING -->
+                        <h5>Like paper, like pixel.</h5>
+                        <!-- DETAILS -->
+                        <p>
+                            Anything you can do with paper journals you can do with Ammo's interactive canvas. Your planning can harness creativity. Draw, write using touch and stylus.
+                        </p>
+                    </div>
+                </div>
+                <!-- SINGLE FOCUS COLUMN -->
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="single-focus white-bg diffuse-shadow yellow-line-bottom wow fadeInRight" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+                        <!-- ICON -->
+                        <div class="icon yellow-text">
+                            <span class="icon icon-unie16d"></span>
+                        </div>
+                        <!-- HEADING -->
+                        <h5>Mobile companion app.</h5>
+                        <!-- DETAILS -->
+                        <p>
+                            Available on iOS, Android and Windows platforms for seamless journaling. Print and download in e-reader friendly formats.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+     SECTION: STATS
+    ============================== -->
+    <section class="stats fixed-bg">
+        <div class="color-overlay">
+            <div class="container">
+                <div class="row">
+                    <!-- STAT -->
+                    <div class="col-lg-4 col-md-4 col-sm-6 wow fadeInUp" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+                        <div class="stats-icon red-text">
+                            <span class="icon icon-graph-regular"></span>
+                        </div>
+                        <h5 class="white-text">25,000+</h5>
+                        <div class="stats-text">
+                            Bullet journals created
+                        </div>
+                        <div class="bottom-icon red-text">
+                            <span class="icon icon-circle-slelected"></span>
+                        </div>
+                    </div>
+                    <!-- STAT -->
+                    <div class="col-lg-4 col-md-4 col-sm-6 wow fadeInUp" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.30s">
+                        <div class="stats-icon green-text">
+                            <span class="icon icon-add-user-regular"></span>
+                        </div>
+                        <h5 class="white-text">100,000+</h5>
+                        <div class="stats-text">
+                            Unique bullets created
+                        </div>
+                        <div class="bottom-icon green-text">
+                            <span class="icon icon-circle-slelected"></span>
+                        </div>
+                    </div>
+                    <!-- STAT -->
+                    <div class="col-lg-4 col-md-4 col-sm-6 wow fadeInUp" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.45s">
+                        <div class="stats-icon purple-text">
+                            <span class="icon icon-like"></span>
+                        </div>
+                        <h5 class="white-text">500,000+</h5>
+                        <div class="stats-text">
+                            Pages of journal entries!
+                        </div>
+                        <div class="bottom-icon purple-text">
+                            <span class="icon icon-circle-slelected"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+     SECTION: WORK STEPS
+    ============================== -->
+    <section class="work-steps" id="section5">
+        <div class="container">
+            <!-- SECTION NUMBER -->
+            <div class="section-number centered-number">
+                HOW
+            </div>
+            <!-- SECTION HEADER -->
+            <div class="section-header">
+                <h2>Do you achieve planning Zen?</h2>
+                <div class="sub-heading">
+                    We understand every project is different. Your plan should be as individual as you are.
+                </div>
+            </div>
+            <div class="row steps">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <!-- STEP 1 -->
+                    <div class="step step-1-image clearfix">
+                        <div class="step-box-left diffuse-shadow red-line-bottom white-bg wow fadeInLeft" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+                            <div class="step-number">
+                                01
+                            </div>
+                            <!-- STEP NUMBER -->
+                            <div class="content-area">
+                                <h4 class="text-left">Design.</h4>
+                                <p class="text-left">
+                                    Work out the type of bullets would best suit you project requirements. Then, when your ready, build a collection of bullets and create the journal's <b>index</b>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- STEP 2 -->
+                    <div class="step step-2-image clearfix">
+                        <div class="step-box-right diffuse-shadow green-line-bottom white-bg wow fadeInRight" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.25s">
+                            <div class="step-number">
+                                02
+                            </div>
+                            <!-- STEP NUMBER -->
+                            <div class="content-area">
+                                <h4 class="text-left">Create</h4>
+                                <p class="text-left">
+                                    Rapidly list your Tasks, Events and Notes as though you were writing bullet points. Prefix each item with a bullet you designed in Step 1. Combining bullets with <b>signifiers</b>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- STEP 3 -->
+                    <div class="step step-3-image clearfix">
+                        <div class="step-box-left diffuse-shadow purple-line-bottom white-bg wow fadeInLeft" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.35s">
+                            <div class="step-number">
+                                03
+                            </div>
+                            <!-- STEP NUMBER -->
+                            <div class="content-area">
+                                <h4 class="text-left">Organize</h4>
+                                <p class="text-left">
+                                    Anything you can do on paper you can do online with Ammo. Be creative and express yourself. Organize your journal into Daily, Monthly and Future <b>logs</b>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- STEP 2 -->
+                    <div class="step step-4-image clearfix">
+                        <div class="step-box-right diffuse-shadow yellow-line-bottom white-bg wow fadeInRight" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.45s">
+                            <div class="step-number">
+                                04
+                            </div>
+                            <!-- STEP NUMBER -->
+                            <div class="content-area">
+                                <h4 class="text-left">Evolve</h4>
+                                <p class="text-left">
+                                    Refine your journals using your own hardware (touch, click or write with pen tablets), organize them within Ammo's library. Download as PDF or eBooks, print them out or send to other third party apps.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+     SECTION: PRICING
+    ============================== -->
+    <section class="pricing bgcolor-2" id="section6">
+        <div class="container">
+            <!-- SECTION NUMBER -->
+            <div class="section-number centered-number">
+                PRICING
+            </div>
+            <!-- SECTION HEADER -->
+            <div class="section-header">
+                <h2>Clear, flexible prices.</h2>
+                <div class="sub-heading">
+                    We believe in transparent pricing with high returns on investment. Easy in and easy out.
+                </div>
+            </div>
+            <div class="row packages">
+                <!-- SINGLE PACKAGE -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single-package green-line-top white-bg diffuse-shadow wow fadeInLeft pricing-col" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+                        <h5>Individual</h5>
+                        <div class="price-circle-green">
+                            <h4 class="white-text">FREE</h4>
+                            <!-- PRICE -->
+                            <div class="extra-small-text white-text">
+                                Forever
+                            </div>
+                        </div>
+                        <ul class="feature-list">
+                            <li><span class="strong">UNLIMITED</span> Bullet Journals</li>
+                            <li><span class="strong">2MB</span> Maximum File Upload Size</li>
+                            <li><span class="strong">3</span> Custom Bullet Collections</li>
+                            <li><span class="icon icon-icon-check"></span> Secure Platform</li>
+                            <li><span class="icon icon-icon-check"></span> Fast &amp; Reliable</li>
+                            <li><span class="icon icon-icon-check"></span> 24/7 Customer Support</li>
+                            <li><span class="icon icon-icon-check"></span> Ad supported</li>
+                        </ul>
+                        <a href="javascript:void(0)" class="btn btn-default standard-button green-button">Get Started</a>
+                    </div>
+                </div>
+                <!-- SINGLE PACKAGE -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single-package red-line-top white-bg diffuse-shadow wow fadeInUp pricing-col" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+                        <h5>Silver Bullet</h5>
+                        <div class="price-circle-red">
+                            <h4 class="white-text">$9.99</h4>
+                            <!-- PRICE -->
+                            <div class="extra-small-text white-text">
+                                Monthly
+                            </div>
+                        </div>
+                        <ul class="feature-list">
+                            <li><span class="strong">ALL</span> features available in Individual tier.</li>
+                            <li><span class="strong">100MB</span> Maximum File Upload Size</li>
+                            <li><span class="strong">UNLIMITED</span> Custom Bullet Collections</li>
+                            <li><span class="strong">UNLIMITED</span> Integration with third party apps</li>
+                            <li><span>1</span> Free Ammo Email address</li>
+                            <li><span>2GB</span> Free Email and Cloud Storage</li>
+                            <li> Encryption of files at rest.</li>
+                            <li> Daily backups with access to your archive. </li>
+                            <li> Customize your UI and branding</li>
+                            <li><span class="fa fa-check"></span>ZERO Ads</li>
+                        </ul>
+                        <a href="javascript:void(0)" class="btn btn-default standard-button red-outline">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+     SECTION: FEATURES / WHY SELECT US
+    ============================== -->
+    <section class="features" id="section8">
+        <div class="container">
+            <!-- SECTION NUMBER -->
+            <div class="section-number centered-number">
+                #AMMO
+            </div>
+            <!-- SECTION HEADER -->
+            <div class="section-header">
+                <h2>Still reading?</h2>
+                <div class="sub-heading">
+                    Here's what else Ammo can do for you.
+                </div>
+            </div>
+            <div class="row feature-grid wow fadeInUp" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+                <!-- SINGLE FEATURE -->
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="feature-box text-left">
+                        <div class="feature-header">
+                            <div class="icon red-text">
+                                <span class="icon icon-graph2"></span>	<!-- FEATURE ICON -->
+                            </div>
+                            <h6>Measurable<br /> results</h6>	<!-- HEADING -->
+                        </div>
+                        <!-- FEATURE DETAILS -->
+                        <p>
+                            The more journals you create the more metrics you can get to see where more time can be saved and what is working well for you.
+                        </p>
+                    </div>
+                </div>
+                <!-- SINGLE FEATURE -->
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="feature-box text-left">
+                        <div class="feature-header">
+                            <div class="icon green-text">
+                                <span class="icon icon-edit"></span>	<!-- FEATURE ICON -->
+                            </div>
+                            <h6>Highly<br />Configurable</h6>	<!-- HEADING -->
+                        </div>
+                        <!-- FEATURE DETAILS -->
+                        <p>
+                            From creating journal covers, custom bullets, unlimited pages, interactive canvas and connectivity with other applications.
+                        </p>
+                    </div>
+                </div>
+                <!-- SINGLE FEATURE -->
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="feature-box text-left">
+                        <div class="feature-header">
+                            <div class="icon purple-text">
+                                <span class="icon icon-exapnd2"></span>	<!-- FEATURE ICON -->
+                            </div>
+                            <h6>Unleash<br />Potential</h6>	<!-- HEADING -->
+                        </div>
+                        <!-- FEATURE DETAILS -->
+                        <p>
+                            All the benefits of paper based journaling with none of the drawbacks. Export, download and print. Take Ammo with you anywhere with our mobile app.
+                        </p>
+                    </div>
+                </div>
+                <!-- SINGLE FEATURE -->
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="feature-box text-left">
+                        <div class="feature-header">
+                            <div class="icon yellow-text">
+                                <span class="icon icon-display1"></span>	<!-- FEATURE ICON -->
+                            </div>
+                            <h6>Smart<br />Experience</h6>	<!-- HEADING -->
+                        </div>
+                        <!-- FEATURE DETAILS -->
+                        <p>
+                            Success scrum project funding marketing seed money prototype innovator direct hackathon android angel investor.
+                        </p>
+                    </div>
+                </div>
+                <!-- SINGLE FEATURE -->
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="feature-box text-left">
+                        <div class="feature-header">
+                            <div class="icon red-text">
+                                <span class="icon icon-date"></span>	<!-- FEATURE ICON -->
+                            </div>
+                            <h6>Regular<br />Updates</h6>	<!-- HEADING -->
+                        </div>
+                        <!-- FEATURE DETAILS -->
+                        <p>
+                            We provide monthly updates to further improve the platform and actively engage the with our community - after all we use Ammo too!
+                        </p>
+                    </div>
+                </div>
+                <!-- SINGLE FEATURE -->
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="feature-box text-left">
+                        <div class="feature-header">
+                            <div class="icon green-text">
+                                <span class="icon icon-medal"></span>	<!-- FEATURE ICON -->
+                            </div>
+                            <h6>Achievement<br />Tracking</h6>	<!-- HEADING -->
+                        </div>
+                        <!-- FEATURE DETAILS -->
+                        <p>
+                            Why not engage with other Ammo users, set each other goals and earn achievement points for spending in the Ammo Store.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- CALL TO ACTION -->
+            <div class="row cta-bottom">
+                <div class="col-lg-12">
+                    <!-- HEADING -->
+                    <h4 class="wow fadeInLeft" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s"><b>Start your journey towards planning Zen now.</b></h4>
+                    <!-- BUTTON -->
+                    <a href="javascript:void(0)" class="btn btn-default standard-button red-button wow fadeInRight" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+     SECTION: CONTACT US
+    ============================== -->
+    <section class="get-in-touch" id="section10">
+        <div class="container">
+            <!-- SECTION NUMBER -->
+            <div class="section-number centered-number">
+                HELLO
+            </div>
+            <!-- SECTION HEADER -->
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <!-- MAIL SUCCESS MESSAGE - ERROR MESSAGE AVAILABLE IN custom.js -->
+                    <h6 class="success green-text">Your Message Successfully Sent</h6>
+                    <h6 class="error red-text"></h6>
+                    <form id="contact-form" class="contact-form">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <input type="text" id="name" name="name" class="input-field input-field-green" placeholder="Your Name">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input type="email" id="email" name="email" class="input-field input-field-green" placeholder="Your Email">
+                            </div>
+                            <div class="col-lg-12">
+                                <textarea name="message" id="message" class="input-field input-field-green" rows="8" placeholder="What's on your mind?"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-default standard-button green-button">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- FOOTER -->
+            <div class="row no-gutters">
+                <div class="footer clearfix">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="footer-col">
+                            <div class="footer-logo">
+                                <img src="~/Assets/images/logo-clear.png" alt="Ammo Logo in White"> <!-- LOGO -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="footer-col">
+                            <h6 class="green-text"></h6>
+                            <p class="white-text">
+                                S10, Duggard House, Peartree Road, Colchester, CO5 4UL
+                                <br>
+                                <a href="mailto:hello@ammoapp.com" style="color:#fc5f45;">hello@ammo.com</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="footer-col">
+                            <h6 class="purple-text"></h6>
+                            <p class="white-text">
+                                <a href="javascript:void(0)" target="_blank" style="color:#FFF;">Sign Up / Sign In</a>
+                                <br>
+                                <a href="javascript:void(0)" target="_blank" style="color:#FFF;">Support</a>
+                                <br>
+                                <a href="javascript:void(0)" target="_blank" style="color:#FFF;">Terms of Use</a>
+                                <br>
+                                <a href="javascript:void(0)" target="_blank" style="color:#FFF;">Privacy / Cookie Policy</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="footer-col">
+                            <h6 class="yellow-text">Connect with us.</h6>
+                            <div class="social-icons">
+                                <a href="javascript:void(0)"><span class="icon icon-sb-facebook"></span></a>
+                                <a href="javascript:void(0)"><span class="icon icon-sb-twitter"></span></a>
+                                <a href="javascript:void(0)"><span class="icon icon-sb-google-plus"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="four-lines">
+                    <div class="line red-line-bottom">
+                    </div>
+                    <div class="line green-line-bottom">
+                    </div>
+                    <div class="line purple-line-bottom">
+                    </div>
+                    <div class="line yellow-line-bottom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+     JS INCLUDES
+    ============================== -->
+    <script src="~/Scripts/API/jquery-1.11.3.min.js"></script>
+    <script src="~/Scripts/API/angular.min.js"></script>
+    <script src="~/Scripts/Controllers/AMMO.Base.js"></script>
+    <script src="~/Scripts/Controllers/AMMO.Landing.js"></script>
+</body>
+</html>

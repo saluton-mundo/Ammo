@@ -1,0 +1,220 @@
+﻿@model Ammo.Portal.Models.IndexViewModel
+@{
+    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+    ViewBag.Title = "Account";
+}
+<div class="container nav-offset-margin">
+    <div class="layout layout-main-right layout-stack-sm">
+        <div class="col-md-3 col-sm-4 layout-sidebar">
+            <ul id="myTab" class="nav nav-layout-sidebar nav-stacked">
+                <li class="active">
+                    <a href="#profile-tab" data-toggle="tab" aria-expanded="true">
+                        <i class="fa fa-user"></i>
+                        &nbsp;&nbsp;Profile
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#password-tab" data-toggle="tab" aria-expanded="false">
+                        <i class="fa fa-lock"></i>
+                        &nbsp;&nbsp;Stay Secure
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#messaging" data-toggle="tab" aria-expanded="false">
+                        <i class="fa fa-bullhorn"></i>
+                        &nbsp;&nbsp;Notifications
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#payments" data-toggle="tab" aria-expanded="false">
+                        <i class="fa fa-cart-plus"></i>
+                        &nbsp;&nbsp;Marketplace
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#reports" data-toggle="tab" aria-expanded="false">
+                        <i class="fa fa-signal"></i>
+                        &nbsp;&nbsp;APIs
+                    </a>
+                </li>
+            </ul>
+        </div> <!-- /.col -->
+        <div class="col-md-9 col-sm-8 layout-main">
+            <div id="settings-content" class="tab-content stacked-content">
+                <div class="tab-pane fade active in" id="profile-tab">
+                    <div class="heading-block">
+                        <h3>
+                            Edit Profile
+                        </h3>
+                    </div> <!-- /.heading-block -->
+                    <p>Personalise your Ammo space by creating a profile.<br />Don't worry though as none of the information is publicly visible!</p>
+                    <form action="./page-settings.html" class="contact-form">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label user-settings-input-label">Avatar</label>
+                            <div class="col-md-7">
+                                <div class="fileinput circular-img green-border" data-provides="fileinput">
+                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="min-width: 125px; min-height: 125px;">
+                                        <img src="~/Assets/images/backgrounds/profile-placeholder.png" class="thumbnail-img-avatar" alt="Avatar">
+                                    </div>
+                                </div> <!-- /.fileupload -->
+                            </div> <!-- /.col -->
+                        </div> <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label user-settings-input-label">Username</label>
+                            <div class="col-md-7">
+                                <input type="text" name="user-name" value="" placeholder="Enter your desired username..." class="input-field" />
+                            </div> <!-- /.col -->
+                        </div> <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label user-settings-input-label">First Name</label>
+                            <div class="col-md-7">
+                                <input type="text" name="first-name" placeholder="What's your first name?'" class="input-field">
+                            </div> <!-- /.col -->
+                        </div> <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label user-settings-input-label">Last Name</label>
+                            <div class="col-md-7">
+                                <input type="text" name="last-name" placeholder="What's your family/last name?'" class="input-field">
+                            </div> <!-- /.col -->
+                        </div> <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label user-settings-input-label">Email Address</label>
+                            <div class="col-md-7">
+                                <input type="text" name="email-address" value="" placeholder="Email for Ammo account" class="input-field">
+                            </div> <!-- /.col -->
+                        </div> <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label user-settings-input-label">About You</label>
+                            <div class="col-md-7">
+                                <textarea id="about-textarea" name="about-you" rows="4" class="input-field" placeholder="Tell us about yourself..."></textarea>
+                            </div> <!-- /.col -->
+                        </div> <!-- /.form-group -->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn standard-button green-button">Save Changes</button>
+                                &nbsp;
+                                <button type="reset" class="btn standard-button grey-outline">Cancel</button>
+                            </div> <!-- /.col -->
+                        </div> <!-- /.form-group -->
+                    </form>
+                </div> <!-- /.tab-pane -->
+                <div class="tab-pane fade" id="password-tab">
+                    <div class="heading-block">
+                        <h3>
+                            Change Password
+                        </h3>
+                    </div> <!-- /.heading-block -->
+                    <br><br>
+                    <form action="./page-settings.html" class="contact-form">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Old Password</label>
+                            <div class="col-md-7">
+                                <input type="password" name="old-password" class="input-field" placeholder="Confirm your old password">
+                            </div> <!-- /.col -->
+                        </div> <!-- /.form-group -->
+                        <hr>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Choose New Password</label>
+                            <div class="col-md-7">
+                                <input type="password" name="new-password-1" class="input-field" placeholder="Mix numbers, letters and special characters.">
+                            </div> <!-- /.col -->
+                        </div> <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Confirm New Password</label>
+                            <div class="col-md-7">
+                                <input type="password" name="new-password-2" class="input-field" placeholder="Let's make sure we got that right">
+                            </div> <!-- /.col -->
+                        </div> <!-- /.form-group -->
+                        <div class="form-group">
+                            <div class="col-md-7 col-md-push-3">
+                                <button type="submit" class="btn standard-button green-button">Save Changes</button>
+                                &nbsp;
+                                <button type="reset" class="btn standard-button grey-outline">Cancel</button>
+                            </div> <!-- /.col -->
+                        </div> <!-- /.form-group -->
+                    </form>
+                </div> <!-- /.tab-pane -->
+                <div class="tab-pane fade" id="messaging">
+                    <div class="heading-block">
+                        <h3>
+                            Notification Settings
+                        </h3>
+                    </div> <!-- /.heading-block -->
+                    <p></p>
+                    <br><br>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Toggle Notifications</label>
+                        <div class="col-md-9">
+                            <div class="col-md-2">
+                                <div class="checkbox">
+                                    <label style="font-size: 2em">
+                                        <input type="checkbox" name="CalendarNotifications" id="CalendarNotifications" value="true" />
+                                        <span class="cr settings-checkbox"><i class="cr-icon fa fa-check"></i></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-7 settings-checkbox-label">
+                                Calendar Notifications
+                            </div>
+                        </div> <!-- /.col -->
+                    </div> <!-- /.form-group -->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"></label>
+                        <div class="col-md-9">
+                            <div class="col-md-2">
+                                <div class="checkbox">
+                                    <label style="font-size: 2em">
+                                        <input type="checkbox" name="PlatformNotifications" id="PlatformNotifications" value="true" />
+                                        <span class="cr settings-checkbox"><i class="cr-icon fa fa-check"></i></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-7 settings-checkbox-label">
+                                Platform Notifications
+                            </div>
+                        </div> <!-- /.col -->
+                    </div> <!-- /.form-group -->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"></label>
+                        <div class="col-md-9">
+                            <div class="col-md-2">
+                                <div class="checkbox">
+                                    <label style="font-size: 2em">
+                                        <input type="checkbox" name="MarketingNotifications" id="MarketingNotifications" value="true" />
+                                        <span class="cr settings-checkbox"><i class="cr-icon fa fa-check"></i></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-7 settings-checkbox-label">
+                                News, Events and Update Notifications
+                            </div>
+                        </div> <!-- /.col -->
+                    </div> <!-- /.form-group -->
+                    <div class="form-group">
+                        <div class="col-md-7 col-lg-push-3">
+                            <button type="submit" class="btn standard-button green-button">Save Changes</button>
+                            &nbsp;
+                            <button type="reset" class="btn standard-button grey-outline">Cancel</button>
+                        </div> <!-- /.col -->
+                    </div> <!-- /.form-group -->
+                </div> <!-- /.tab-pane -->
+                <div class="tab-pane fade" id="payments">
+                    <div class="heading-block">
+                        <h3>
+                            Lots of goodies coming soon!
+                        </h3>
+                    </div> <!-- /.heading-block -->
+                    <img src="~/Assets/images/backet.png" class="marketplace-basket-img" />
+                </div> <!-- /.tab-pane -->
+                <div class="tab-pane fade" id="reports">
+                    <div class="heading-block">
+                        <h3>
+                            Connect Accounts
+                        </h3>
+                    </div> <!-- /.heading-block -->
+                    @Html.Action("ManageLogins", "Manage")
+                </div> <!-- /.tab-pane -->
+            </div> <!-- /.tab-content -->
+        </div> <!-- /.col -->
+    </div>
+</div>

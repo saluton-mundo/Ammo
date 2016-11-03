@@ -1,0 +1,9 @@
+F:\Ammo\Ammo.Portal\Ammo.Database\bin\Debug\Ammo.Database.dacpac
+F:\Ammo\Ammo.Portal\Ammo.Database\bin\Debug\Ammo.Database.dll
+F:\Ammo\Ammo.Portal\Ammo.Database\bin\Debug\Ammo.Database.pdb
+F:\Ammo\Ammo.Portal\Ammo.Database\obj\Debug\Ammo.Database.dll
+F:\Ammo\Ammo.Portal\Ammo.Database\obj\Debug\Ammo.Database.pdb
+F:\Ammo\Ammo.Portal\Ammo.Database\obj\Debug\Model.xml
+F:\Ammo\Ammo.Portal\Ammo.Database\obj\Debug\refactor.xml
+F:\Ammo\Ammo.Portal\Ammo.Database\obj\Debug\postdeploy.sql
+F:\Ammo\Ammo.Portal\Ammo.Database\obj\Debug\predeploy.sql

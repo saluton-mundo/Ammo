@@ -1,0 +1,47 @@
+﻿@model Ammo.Domain.Entities.JournalIndex
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+}
+
+<!-- =========================
+     JOURNAL PAGE NAVIGATION
+    ============================== -->
+<a href="javascript:void(0)" class="previous-page-a">
+    <img class="previous-page" src="../assets/icons/previous-page.png">
+</a>
+<a href="javascript:void(0)" class="next-page-a">
+    <img class="next-page" src="../assets/icons/next-page.png">
+</a>
+<!-- =========================
+     SECTION: MAIN JOURNAL PAGE
+    ============================== -->
+<section id="journal-page">
+    <div class="container">
+        <div class="row">
+            <div id="journal-page-canvas" class="col-lg-12 col-md-12 col-sm-12 journal-page-canvas">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="heading-block">
+                        <h3>
+                            Index
+                        </h3>
+                    </div> <!-- /.heading-block -->
+                </div>
+                @if (Model.Bullets != null)
+                {
+                    <!-- Show contents of current bullet collection -->
+                }
+                @if (Model.Tags != null)
+                {
+                    <!-- Show all tagged pages -->
+                }
+                @if (Model.Bookmarks != null && Model.Bookmarks.Count() > 0)
+                {
+                    <!-- Show current bookmarks -->
+                }
+                <center class="journal-page-number"> &lt; INDEX &gt;</center>
+            </div>
+        </div>
+    </div>
+</section>

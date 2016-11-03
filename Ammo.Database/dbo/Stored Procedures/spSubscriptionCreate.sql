@@ -1,0 +1,5 @@
+﻿CREATE PROCEDURE [dbo].[spSubscriptionCreate]
+	@NAME	VARCHAR(255)
+AS
+	SELECT @NAME
+RETURN 0
