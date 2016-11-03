@@ -30,7 +30,7 @@ namespace Ammo.Portal.Controllers
         public ActionResult List(int JournalId)
         {
             // Here we will get all bookmarks relating to this journal
-            IEnumerable<Bookmark> model = new List<Bookmark>();
+            IEnumerable<JournalBookmark> model = new List<JournalBookmark>();
             return View("List", model);
         }
     }
