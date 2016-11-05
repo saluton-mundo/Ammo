@@ -15,6 +15,9 @@ namespace Ammo.Portal
 {
     public partial class Startup
     {
+        // TODO Remove!!!
+        string Admin = "169b3b4e-71cc-4fc6-86b8-240cf23de247";
+
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
@@ -39,7 +42,7 @@ namespace Ammo.Portal
                     // Enables the application to validate the security stamp when the user logs in.
                     // This is a security feature which is used when you change a password or add an external login to your account.  
                     OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<IdentityUserManager, IdentityUser, Guid>(
-                        validateInterval: TimeSpan.FromMinutes(30),
+                        validateInterval: TimeSpan.FromMinutes(120),
                         regenerateIdentityCallback: (manager, user) => user.GenerateUserIdentityAsync(manager, DefaultAuthenticationTypes.ApplicationCookie),
                         getUserIdCallback: (claim) => Guid.Parse(claim.GetUserId()))
                 }

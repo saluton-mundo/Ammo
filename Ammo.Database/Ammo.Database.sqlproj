@@ -102,6 +102,15 @@
     <Build Include="dbo\Tables\JournalBulletCollection.sql" />
     <Build Include="dbo\Tables\JournalTag.sql" />
     <Build Include="dbo\Tables\JournalBookmark.sql" />
+    <Build Include="dbo\Stored Procedures\spBulletCollectionGet.sql" />
+    <Build Include="dbo\Stored Procedures\spBulletCollectionAddUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\spBulletCollectionDelete.sql" />
+    <Build Include="dbo\Stored Procedures\spBulletCollectionBulletGet.sql" />
+    <Build Include="dbo\Stored Procedures\spBulletCollectionBulletAddUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\spBulletCollectionBulletDelete.sql" />
+    <Build Include="dbo\Stored Procedures\spBulletGet.sql" />
+    <Build Include="dbo\Stored Procedures\spBulletAddUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\spBulletDelete.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Ammo.Database.refactorlog" />

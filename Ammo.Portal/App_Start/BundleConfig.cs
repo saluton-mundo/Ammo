@@ -51,7 +51,8 @@ namespace Ammo.Portal
 
             bundles.Add(new StyleBundle("~/Content/Journal").Include(
                       "~/Content/AMMO.Menu.css",
-                      "~/Content/AMMO.Journal.css"));
+                      "~/Content/AMMO.Journal.css",
+                      "~/Content/AMMO.Bullet.css"));
 
             BundleTable.EnableOptimizations = true;
         }

@@ -66,6 +66,7 @@
     <Compile Include="Entities\JournalTag.cs" />
     <Compile Include="Entities\Subscription.cs" />
     <Compile Include="Repositories\Abstract\IBookmarkRepository.cs" />
+    <Compile Include="Repositories\Abstract\IBulletCollectionBulletRepository.cs" />
     <Compile Include="Repositories\Abstract\IBulletCollectionRepository.cs" />
     <Compile Include="Repositories\Abstract\IBulletRepository.cs" />
     <Compile Include="Repositories\Abstract\IJournalIndexRepository.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Repositories\Abstract\ISubscriptionRepository.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\Concrete\BookmarkRepository.cs" />
+    <Compile Include="Repositories\Concrete\BulletCollectionBulletRepository.cs" />
     <Compile Include="Repositories\Concrete\BulletCollectionRepository.cs" />
     <Compile Include="Repositories\Concrete\BulletRepository.cs" />
     <Compile Include="Repositories\Concrete\JournalIndexRepository.cs" />
@@ -82,6 +84,7 @@
     <Compile Include="Repositories\Concrete\SubscriptionRepository.cs" />
     <Compile Include="Services\Abstract\IBaseService.cs" />
     <Compile Include="Services\Abstract\IBookmarkService.cs" />
+    <Compile Include="Services\Abstract\IBulletCollectionBulletService.cs" />
     <Compile Include="Services\Abstract\IBulletCollectionService.cs" />
     <Compile Include="Services\Abstract\IBulletService.cs" />
     <Compile Include="Services\Abstract\IJournalCoverService.cs" />
@@ -92,6 +95,7 @@
     <Compile Include="Services\Abstract\IUserService..cs" />
     <Compile Include="Services\Concrete\BaseService.cs" />
     <Compile Include="Services\Concrete\BookmarkService.cs" />
+    <Compile Include="Services\Concrete\BulletCollectionBulletService.cs" />
     <Compile Include="Services\Concrete\BulletCollectionService.cs" />
     <Compile Include="Services\Concrete\BulletService.cs" />
     <Compile Include="Services\Concrete\JournalCoverService.cs" />

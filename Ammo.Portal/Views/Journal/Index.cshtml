@@ -2,17 +2,14 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+    Layout = "~/Views/Shared/_LoggedInJournalLayout.cshtml";
 }
 
 <!-- =========================
      JOURNAL PAGE NAVIGATION
     ============================== -->
-<a href="javascript:void(0)" class="previous-page-a">
-    <img class="previous-page" src="../assets/icons/previous-page.png">
-</a>
 <a href="javascript:void(0)" class="next-page-a">
-    <img class="next-page" src="../assets/icons/next-page.png">
+    <img class="next-page" src="~/Assets/icons/add.png" alt="Add New Page" />
 </a>
 <!-- =========================
      SECTION: MAIN JOURNAL PAGE
@@ -22,9 +19,10 @@
         <div class="row">
             <div id="journal-page-canvas" class="col-lg-12 col-md-12 col-sm-12 journal-page-canvas">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="heading-block">
+                    <div class="col-lg-12 col-md-12 col-sm-12 heading-block">
                         <h3>
-                            Index
+                            Journal Key
+                            <small class="whats-this" id="whats-this-3">What's this?</small>
                         </h3>
                     </div> <!-- /.heading-block -->
                 </div>
@@ -32,15 +30,56 @@
                 {
                     <!-- Show contents of current bullet collection -->
                 }
-                @if (Model.Tags != null)
+                else
+                {
+                    <!-- No Bullet Collection! -->
+                    <a href="javascript:void(0)">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <img class="index-no-data-img" src="~/Assets/icons/add-list.png" />
+                            <h2 class="index-no-data-h2">A key is essential to your Journal.. Click to add one now!</h2>
+                        </div>
+                    </a>
+                }
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 heading-block">
+                        <h3>
+                            Tags
+                            <small class="whats-this" id="whats-this-3">What's this?</small>
+                        </h3>
+                    </div> <!-- /.heading-block -->                    
+                </div>
+                @if (Model.Tags != null && Model.Tags.Count() > 0)
                 {
                     <!-- Show all tagged pages -->
                 }
+                else
+                {
+                    <!-- No Tags Exist! -->
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <img class="index-no-data-img" src="~/Assets/icons/no-tags.png" />
+                        <h2 class="index-no-data-h2">No Tags exist for this journal yet!</h2>
+                    </div>
+                }
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12  heading-block">
+                        <h3>
+                            Bookmarks
+                            <small class="whats-this" id="whats-this-3">What's this?</small>
+                        </h3>
+                    </div> <!-- /.heading-block -->
+                </div>
                 @if (Model.Bookmarks != null && Model.Bookmarks.Count() > 0)
                 {
                     <!-- Show current bookmarks -->
                 }
-                <center class="journal-page-number"> &lt; INDEX &gt;</center>
+                else
+                {
+                    <!-- No Bookmarks exist!-->
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <img class="index-no-data-img index-no-data-bookmark" src="~/Assets/icons/no-bookmark.png" />
+                        <h2 class="index-no-data-h2">No bookmarks exist for this journal yet!</h2>
+                    </div>
+                }
             </div>
         </div>
     </div>

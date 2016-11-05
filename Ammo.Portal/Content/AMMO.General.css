@@ -2149,3 +2149,11 @@ nav-layout-sidebar-skip {
 .inline-block {
     display: inline-block;
 }
+.whats-this,
+.whats-this:hover {
+    font-size: 10px;
+    border-bottom: 1px #444 dotted;
+    text-align:right;
+    background:none;
+    cursor:pointer;
+}

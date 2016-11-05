@@ -26,12 +26,11 @@ namespace Ammo.Domain.Repositories.Concrete
             {
                 using (GridReader reader = connection.QueryMultiple("spJournalIndexGet", new { @JOURNALID = JournalId }, null, null, CommandType.StoredProcedure))
                 {
-                    index = reader.Read<JournalIndex>().Single();
+                    index = reader.Read<JournalIndex>().SingleOrDefault();
 
                     index.Bookmarks = reader.Read<JournalBookmark>().ToList();
 
-                    index.Bullets = reader.Read<BulletCollection>().Single();
-                    index.Bullets.Bullets = reader.Read<Bullet>().ToList();
+                    index.Bullets = reader.Read<BulletCollection>().SingleOrDefault();
 
                     index.Tags = reader.Read<JournalTag>().ToList();
                 }

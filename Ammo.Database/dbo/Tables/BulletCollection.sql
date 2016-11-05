@@ -6,6 +6,7 @@
     [LastActionDate]     DATETIME         NOT NULL,
     [CreateUserId]       UNIQUEIDENTIFIER NOT NULL,
     [LastActionUserId]   UNIQUEIDENTIFIER NOT NULL,
+    [IsAmmoDefault] BIT NOT NULL DEFAULT 'False', 
     CONSTRAINT [PK_BulletCollection] PRIMARY KEY CLUSTERED ([BulletCollectionId] ASC)
 );
 

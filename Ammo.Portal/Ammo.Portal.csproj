@@ -256,6 +256,8 @@
     <Content Include="Assets\icons\2-cols.png" />
     <Content Include="Assets\icons\3-cols-centered.png" />
     <Content Include="Assets\icons\3-cols-classic.png" />
+    <Content Include="Assets\icons\add-list.png" />
+    <Content Include="Assets\icons\add.png" />
     <Content Include="Assets\icons\archive.png" />
     <Content Include="Assets\icons\box.png" />
     <Content Include="Assets\icons\bullet.png" />
@@ -271,6 +273,8 @@
     <Content Include="Assets\icons\layout.png" />
     <Content Include="Assets\icons\menu.png" />
     <Content Include="Assets\icons\next-page.png" />
+    <Content Include="Assets\icons\no-bookmark.png" />
+    <Content Include="Assets\icons\no-tags.png" />
     <Content Include="Assets\icons\open-journal.png" />
     <Content Include="Assets\icons\previous-page.png" />
     <Content Include="Assets\icons\save.png" />
@@ -281,6 +285,7 @@
     <Content Include="Assets\images\backet.png" />
     <Content Include="Assets\images\backgrounds\blank-cover.png" />
     <Content Include="Assets\images\backgrounds\profile-placeholder.png" />
+    <Content Include="Content\AMMO.Bullet.css" />
     <Content Include="Content\AMMO.Calendar.css" />
     <Content Include="Content\AMMO.Fonts.css" />
     <Content Include="Assets\icons\substract.png" />
@@ -397,7 +402,6 @@
     <Folder Include="Media\ImageUploads\Bullets\" />
     <Folder Include="Media\VideoUploads\" />
     <Folder Include="Scripts\Services\" />
-    <Folder Include="Views\BulletCollection\" />
     <Folder Include="Views\Bullet\" />
     <Folder Include="Views\JournalCover\" />
     <Folder Include="Views\JournalPageTemplate\" />
@@ -431,6 +435,8 @@
     <Content Include="Views\Journal\Edit.cshtml" />
     <Content Include="Views\Journal\_Delete.cshtml" />
     <Content Include="Views\Journal\Index.cshtml" />
+    <Content Include="Views\Shared\_LoggedInJournalLayout.cshtml" />
+    <Content Include="Views\BulletCollection\_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ammo.Domain\Ammo.Domain.csproj">

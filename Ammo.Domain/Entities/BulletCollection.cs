@@ -10,6 +10,8 @@ namespace Ammo.Domain.Entities
     {
         public int BullectCollectionId { get; set; }
         public string Name { get; set; }
+        public string CreateUserId { get; set; }
+        public bool IsAmmoDefault { get; set; }
         public IEnumerable<Bullet> Bullets { get; set; }
     }
 }

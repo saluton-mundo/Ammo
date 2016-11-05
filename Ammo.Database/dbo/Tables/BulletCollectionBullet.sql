@@ -6,7 +6,6 @@
     [LastActionDate]     DATETIME         NOT NULL,
     [CreateUserId]       UNIQUEIDENTIFIER NOT NULL,
     [LastActionUserId]   UNIQUEIDENTIFIER NOT NULL,
-    [ImageUri] NVARCHAR(1024) NULL, 
     CONSTRAINT [PK_BulletCollectionBullet] PRIMARY KEY CLUSTERED ([BulletCollectionId] ASC, [BulletId] ASC)
 );
 

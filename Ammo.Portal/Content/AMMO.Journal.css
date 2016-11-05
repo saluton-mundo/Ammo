@@ -21,7 +21,7 @@
 .previous-page {
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 10px;
     width: 50px;
     z-index: 10;
 }
@@ -29,7 +29,7 @@
 .next-page {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: 10px;
     width: 50px;
     z-index: 10;
 }
@@ -279,3 +279,14 @@
 .journals-journal-link:hover {
     border-color: #fc5f45;
 }
+.index-no-data-h2 {
+    font-size: 1em;
+    color: #adadad;
+    line-height:1.5;
+}
+.index-no-data-img {
+    width:10%;
+}
+    .index-no-data-bookmark {
+        margin-left: 2em;
+    }

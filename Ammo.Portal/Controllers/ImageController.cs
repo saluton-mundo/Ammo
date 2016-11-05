@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Ammo.Portal.Controllers
 {
-
+    // TODO Make the paths config!
     public class ImageController : BaseController
     {
         [HttpGet]
@@ -40,6 +40,22 @@ namespace Ammo.Portal.Controllers
 
                 return new FileStreamResult(new FileStream(path, FileMode.Open), "image/png");
             }        
+        }
+
+        [HttpGet]
+        [Authorize]
+        public FileResult BulletGet(string BulletUri = null)
+        {
+            if(string.IsNullOrEmpty(BulletUri))
+            {
+                return new FileStreamResult(new FileStream("/Assets/icons/bullet.png", FileMode.Open), "image/[ng");
+            }
+            else
+            {
+                string path = Server.MapPath(string.Concat("/Assets/bullets/", BulletUri));
+
+                return new FileStreamResult(new FileStream(path, FileMode.Open), "image/png");
+            }
         }
     }
 }

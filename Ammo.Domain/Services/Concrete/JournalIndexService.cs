@@ -22,7 +22,7 @@ namespace Ammo.Domain.Services.Concrete
         {
             JournalIndex index = _indexRepository.Get(JournalId);
 
-            if(index.OwnerId.ToUpper() == SessionUserId.ToUpper())
+            if(index.OwnerId.ToString().ToUpper() == SessionUserId.ToUpper())
             {
                 return index;
             }
