@@ -119,6 +119,7 @@
     <Build Include="dbo\Stored Procedures\spJournalTemplateGet.sql" />
     <Build Include="dbo\Stored Procedures\spJournalTemplateDelete.sql" />
     <Build Include="dbo\Stored Procedures\spJournalTemplateAddUpdate.sql" />
+    <Build Include="dbo\Tables\JournalTemplateBulletCollection.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Ammo.Database.refactorlog" />

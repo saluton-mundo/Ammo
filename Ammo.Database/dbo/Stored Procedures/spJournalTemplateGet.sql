@@ -17,8 +17,17 @@ BEGIN
 	BEGIN TRY 
 		SELECT 
 			jt.*
+			,bc.*
 		FROM 
 			JournalTemplate AS jt
+		LEFT OUTER JOIN 
+			JournalTemplateBulletCollection AS jtbc
+			ON jt.TemplateId = jtbc.BulletCollectionId
+			AND jtbc.Deleted = 'False'
+		LEFT OUTER JOIN 
+			BulletCollection AS bc
+			ON jtbc.BulletCollectionId = bc.BulletCollectionId
+			AND bc.Deleted = 'False'
 		WHERE 
 			jt.TemplateId = ISNULL(@JOURNALTEMPLATEID, jt.TemplateId)
 			AND jt.IsPremium = ISNULL(@PREMIUMFLAG, jt.IsPremium)

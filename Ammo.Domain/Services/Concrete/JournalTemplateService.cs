@@ -12,9 +12,12 @@ namespace Ammo.Domain.Services.Concrete
     public class JournalTemplateService : BaseService, IJournalTemplateService
     {
         IJournalTemplateRepository _templateRepository;
+        IBulletRepository _bulletRepository;
 
-        public JournalTemplateService(IJournalTemplateRepository templateRepository)
+        public JournalTemplateService(IBulletRepository bulletRepository,
+                                      IJournalTemplateRepository templateRepository)
         {
+            _bulletRepository = bulletRepository;
             _templateRepository = templateRepository;
         }
 
@@ -56,7 +59,17 @@ namespace Ammo.Domain.Services.Concrete
 
         public IEnumerable<JournalTemplate> Get(int? JournalTemplateId, bool? PremiumFlag)
         {
-            return _templateRepository.Get(JournalTemplateId, PremiumFlag);
+            IEnumerable<JournalTemplate> templates = _templateRepository.Get(JournalTemplateId, PremiumFlag);
+
+            foreach(JournalTemplate template in templates)
+            {
+                if(template.TemplateBulletCollection != null && template.TemplateBulletCollection.BulletCollectionId != 0)
+                {
+                    template.TemplateBulletCollection.Bullets = _bulletRepository.GetByCollection(template.TemplateBulletCollection.BulletCollectionId);
+                }
+            }
+
+            return templates;
         }
     }
 }

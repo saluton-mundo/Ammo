@@ -14,5 +14,9 @@ namespace Ammo.Domain.Entities
         public bool IsPremium { get; set; }
         public float Price { get; set; }
         public Guid CreateUserId { get; set; }
+        /// <summary>
+        /// Some Templates require a specific Bullet Collection to function properly
+        /// </summary>
+        public BulletCollection TemplateBulletCollection { get; set; }
     }
 }

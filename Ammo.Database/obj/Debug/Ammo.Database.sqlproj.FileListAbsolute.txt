@@ -12,3 +12,7 @@ F:\Ammo-Journal\Ammo.Database\bin\Debug\Ammo.Database.dll
 F:\Ammo-Journal\Ammo.Database\bin\Debug\Ammo.Database.pdb
 F:\Ammo-Journal\Ammo.Database\obj\Debug\Ammo.Database.dll
 F:\Ammo-Journal\Ammo.Database\obj\Debug\Ammo.Database.pdb
+F:\Ammo-Journal\Ammo.Database\obj\Debug\Model.xml
+F:\Ammo-Journal\Ammo.Database\obj\Debug\refactor.xml
+F:\Ammo-Journal\Ammo.Database\obj\Debug\postdeploy.sql
+F:\Ammo-Journal\Ammo.Database\obj\Debug\predeploy.sql

@@ -55,6 +55,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auditing\Audit.cs" />
+    <Compile Include="Configuration\Application.cs" />
+    <Compile Include="Configuration\AWS.cs" />
+    <Compile Include="Configuration\Debug.cs" />
+    <Compile Include="Configuration\Email.cs" />
+    <Compile Include="Configuration\Envinroment.cs" />
+    <Compile Include="Configuration\Facebook.cs" />
+    <Compile Include="Configuration\MailChimp.cs" />
+    <Compile Include="Configuration\Stripe.cs" />
+    <Compile Include="Configuration\Twitter.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\BulletCollectionBullet.cs" />
     <Compile Include="Entities\JournalBookmark.cs" />
@@ -127,9 +136,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configuration\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
