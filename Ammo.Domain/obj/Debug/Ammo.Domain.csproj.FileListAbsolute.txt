@@ -15,4 +15,3 @@ F:\Ammo-Journal\Ammo.Domain\bin\Debug\Dapper.xml
 F:\Ammo-Journal\Ammo.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 F:\Ammo-Journal\Ammo.Domain\obj\Debug\Ammo.Domain.dll
 F:\Ammo-Journal\Ammo.Domain\obj\Debug\Ammo.Domain.pdb
-F:\Ammo-Journal\Ammo.Domain\obj\Debug\Ammo.Domain.csprojResolveAssemblyReference.cache

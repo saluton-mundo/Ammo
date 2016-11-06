@@ -61,6 +61,7 @@
     <Compile Include="Entities\BulletCollection.cs" />
     <Compile Include="Entities\FileUploadResult.cs" />
     <Compile Include="Entities\Journal.cs" />
+    <Compile Include="Entities\JournalBulletCollection.cs" />
     <Compile Include="Entities\JournalIndex.cs" />
     <Compile Include="Entities\JournalPage.cs" />
     <Compile Include="Entities\JournalTag.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Repositories\Abstract\IBulletCollectionBulletRepository.cs" />
     <Compile Include="Repositories\Abstract\IBulletCollectionRepository.cs" />
     <Compile Include="Repositories\Abstract\IBulletRepository.cs" />
+    <Compile Include="Repositories\Abstract\IJournalBulletCollectionRepository.cs" />
     <Compile Include="Repositories\Abstract\IJournalIndexRepository.cs" />
     <Compile Include="Repositories\Abstract\IJournalRepository.cs" />
     <Compile Include="Repositories\Abstract\IJournalTagRepository.cs" />
@@ -78,6 +80,7 @@
     <Compile Include="Repositories\Concrete\BulletCollectionBulletRepository.cs" />
     <Compile Include="Repositories\Concrete\BulletCollectionRepository.cs" />
     <Compile Include="Repositories\Concrete\BulletRepository.cs" />
+    <Compile Include="Repositories\Concrete\JournalBulletCollectionRepository.cs" />
     <Compile Include="Repositories\Concrete\JournalIndexRepository.cs" />
     <Compile Include="Repositories\Concrete\JournalRepository.cs" />
     <Compile Include="Repositories\Concrete\JournalTagRepository.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="Services\Abstract\IBulletCollectionBulletService.cs" />
     <Compile Include="Services\Abstract\IBulletCollectionService.cs" />
     <Compile Include="Services\Abstract\IBulletService.cs" />
+    <Compile Include="Services\Abstract\IJournalBulletCollectionService.cs" />
     <Compile Include="Services\Abstract\IJournalCoverService.cs" />
     <Compile Include="Services\Abstract\IJournalIndexService.cs" />
     <Compile Include="Services\Abstract\IJournalService.cs" />
@@ -98,6 +102,7 @@
     <Compile Include="Services\Concrete\BulletCollectionBulletService.cs" />
     <Compile Include="Services\Concrete\BulletCollectionService.cs" />
     <Compile Include="Services\Concrete\BulletService.cs" />
+    <Compile Include="Services\Concrete\JournalBulletCollectionService.cs" />
     <Compile Include="Services\Concrete\JournalCoverService.cs" />
     <Compile Include="Services\Concrete\JournalIndexService.cs" />
     <Compile Include="Services\Concrete\JournalService.cs" />

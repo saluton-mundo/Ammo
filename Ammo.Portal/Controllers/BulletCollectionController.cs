@@ -26,5 +26,18 @@ namespace Ammo.Portal.Controllers
 
             return PartialView("_List", model);
         }
+
+        [Route("SelectList")]
+        public ActionResult SelectList(int JournalId)
+        {
+            IEnumerable<BulletCollection> collections = _collectionService.GetByUser(User.Identity.GetUserId());
+            JournalBulletCollection model = new JournalBulletCollection()
+            {
+                JournalId = JournalId,
+                Collections = collections
+            };
+
+            return PartialView("_SelectList", model);
+        }
     }
 }

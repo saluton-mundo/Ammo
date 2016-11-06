@@ -198,6 +198,7 @@
     <Compile Include="Controllers\BulletController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JournalBulletCollectionController.cs" />
     <Compile Include="Controllers\JournalController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\JournalCoverController.cs" />
@@ -403,6 +404,7 @@
     <Folder Include="Media\VideoUploads\" />
     <Folder Include="Scripts\Services\" />
     <Folder Include="Views\Bullet\" />
+    <Folder Include="Views\JournalBulletCollection\" />
     <Folder Include="Views\JournalCover\" />
     <Folder Include="Views\JournalPageTemplate\" />
     <Folder Include="Views\JournalPage\" />
@@ -437,6 +439,7 @@
     <Content Include="Views\Journal\Index.cshtml" />
     <Content Include="Views\Shared\_LoggedInJournalLayout.cshtml" />
     <Content Include="Views\BulletCollection\_List.cshtml" />
+    <Content Include="Views\BulletCollection\_SelectList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ammo.Domain\Ammo.Domain.csproj">

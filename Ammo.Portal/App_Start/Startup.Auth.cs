@@ -16,7 +16,7 @@ namespace Ammo.Portal
     public partial class Startup
     {
         // TODO Remove!!!
-        string Admin = "169b3b4e-71cc-4fc6-86b8-240cf23de247";
+        public const string Admin = "169b3b4e-71cc-4fc6-86b8-240cf23de247";
 
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)

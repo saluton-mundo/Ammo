@@ -79,6 +79,7 @@ namespace Ammo.Portal.App_Start
             kernel.Bind<IBulletCollectionService>().To<BulletCollectionService>();
             kernel.Bind<IBulletCollectionBulletService>().To<BulletCollectionBulletService>();
             kernel.Bind<IJournalService>().To<JournalService>();
+            kernel.Bind<IJournalBulletCollectionService>().To<JournalBulletCollectionService>();
             kernel.Bind<IJournalIndexService>().To<JournalIndexService>();
             kernel.Bind<IJournalCoverService>().To<JournalCoverService>();
             kernel.Bind<IJournalTagService>().To<JournalTagService>();
@@ -91,6 +92,7 @@ namespace Ammo.Portal.App_Start
             kernel.Bind<IBulletCollectionRepository>().To<BulletCollectionRepository>();
             kernel.Bind<IBulletCollectionBulletRepository>().To<BulletCollectionBulletRepository>();
             kernel.Bind<IJournalRepository>().To<JournalRepository>();
+            kernel.Bind<IJournalBulletCollectionRepository>().To<JournalBulletCollectionRepository>();
             kernel.Bind<IJournalIndexRepository>().To<JournalIndexRepository>();
             kernel.Bind<IJournalTagRepository>().To<JournalTagRepository>();
             kernel.Bind<ISubscriptionRepository>().To<SubscriptionRepository>();

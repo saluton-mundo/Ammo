@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Ammo.Domain.Entities.JournalBulletCollection>
+@{
+    Layout = null;
+}
+<div class="col-lg-12 col-md-12 col-sm-12">
+    @if (Model != null && Model.Count() > 0)
+    {
+        foreach (Ammo.Domain.Entities.BulletCollection collection in Model.Collections)
+        {
+            <div class="col-lg-4 col-md-3 col-sm-12" id="bullet-collection-@collection.BullectCollectionId">
+                <section class="bullet-collection">
+                    @if (collection.Bullets != null && collection.Bullets.Count() > 0)
+                    {
+                        foreach (Ammo.Domain.Entities.Bullet bullet in collection.Bullets)
+                        {
+                            <img src="@Url.Action("BulletGet", "Image", new { BulletUri = bullet.ImageUri })" />
+                        }
+                    }
+                </section>
+                <h1>@Html.Raw(collection.Name)</h1>
+                @using (Ajax.BeginForm("Save", "JournalBulletCollection", null, new AjaxOptions() { OnSuccess = "JOURNAL.OnBulletCollectionSuccess", OnFailure = "JOURNAL.OnBulletCollectionError" }, new { @id = Html.Raw(collection.BullectCollectionId) }))
+                {
+                    @Html.HiddenFor(m => m.SelectedBulletCollectionId, new { @value = collection.BullectCollectionId })
+                    <button form="@collection.BullectCollectionId" type="submit" class="btn standard-button green-button green-outline"> USE THIS COLLECTION</button>
+                }
+            </div>
+        }
+    }
+</div>
