@@ -8,6 +8,8 @@ using Ammo.Domain.Entities;
 using System.Data.SqlClient;
 using System.Data;
 using Dapper;
+using static Dapper.SqlMapper;
+using Ammo.Domain.Extensions.ORM;
 
 namespace Ammo.Domain.Repositories.Concrete
 {
@@ -21,7 +23,7 @@ namespace Ammo.Domain.Repositories.Concrete
                                                                  new
                                                                  {
                                                                      @BULLETCOLLECTIONID = BulletCollectionId,
-                                                                     @SESSIONUSERID = System.DBNull.Value
+                                                                     @SESSIONUSERID = (int?)null
                                                                  },
                                                                  null,
                                                                  true,
@@ -39,8 +41,8 @@ namespace Ammo.Domain.Repositories.Concrete
                 return Task.FromResult(connection.Query<BulletCollection>("spBulletCollectionGet",
                                                                  new
                                                                  {
-                                                                     @BULLETCOLLECTIONID = System.DBNull.Value,
-                                                                     @SESSIONUSERID = System.DBNull.Value
+                                                                     @BULLETCOLLECTIONID = (int?)null,
+                                                                     @SESSIONUSERID = (int?)null
                                                                  },
                                                                  null,
                                                                  true,
@@ -53,16 +55,31 @@ namespace Ammo.Domain.Repositories.Concrete
         {
             using (var connection = new SqlConnection(base.ConnectionString))
             {
-                return Task.FromResult(connection.Query<BulletCollection>("spBulletCollectionGet",
-                                                                 new
-                                                                 {
-                                                                     @BULLETCOLLECTIONID = System.DBNull.Value,
-                                                                     @SESSIONUSERID = Guid.Parse(UserName)
-                                                                 },
-                                                                 null,
-                                                                 true,
-                                                                 null,
-                                                                 CommandType.StoredProcedure)).Result;
+                using (GridReader reader = connection.QueryMultiple("spBulletCollectionGet",
+                                                                    new
+                                                                    {
+                                                                        @BULLETCOLLECTIONID = (int?)null,
+                                                                        @SESSIONUSERID = Guid.Parse(UserName)
+                                                                    },
+                                                                    null,
+                                                                    null,
+                                                                    CommandType.StoredProcedure))
+                {
+                    List<BulletCollection> collections = reader.Read<BulletCollection>().ToList();
+                    IEnumerable<Bullet> bullets = reader.Read<Bullet>();
+
+                    if (collections != null && collections.Count > 0)
+                    {
+                        foreach(BulletCollection collection in collections)
+                        {
+                            collection.Bullets = bullets.Where(b => b.BulletCollectionId == collection.BulletCollectionId)
+                                                        .Distinct()
+                                                        .ToList();
+                        }
+                    }
+
+                    return collections;
+                }
             }
         }
 
@@ -73,7 +90,7 @@ namespace Ammo.Domain.Repositories.Concrete
                 return Task.FromResult(connection.ExecuteScalar<int>("spBulletCollectionAddUpdate",
                                                                      new
                                                                      {
-                                                                         @BULLETCOLLECTIONID = Collection.BullectCollectionId,
+                                                                         @BULLETCOLLECTIONID = Collection.BulletCollectionId,
                                                                          @NAME = Collection.Name,
                                                                          @ISAMMODEFAULT = Collection.IsAmmoDefault,
                                                                          @SESSIONUSERID = SessionUser

@@ -10,6 +10,7 @@ using System.Web.Mvc;
 namespace Ammo.Portal.Controllers
 {
     [Authorize]
+    [RoutePrefix("BulletCollection")]
     public class BulletCollectionController : BaseController
     {
         private IBulletCollectionService _collectionService;
@@ -27,7 +28,7 @@ namespace Ammo.Portal.Controllers
             return PartialView("_List", model);
         }
 
-        [Route("SelectList")]
+        [Route("SelectList/{JournalId}")]
         public ActionResult SelectList(int JournalId)
         {
             IEnumerable<BulletCollection> collections = _collectionService.GetByUser(User.Identity.GetUserId());

@@ -4199,6 +4199,113 @@ END]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spBulletGet]&#xD;&#xA;&#x9;@BULLETID&#x9;INT&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spBulletGetByCollection]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	
+	SET NOCOUNT ON;
+    SET XACT_ABORT,
+        QUOTED_IDENTIFIER,
+        ANSI_NULLS,
+        ANSI_PADDING,
+        ANSI_WARNINGS,
+        ARITHABORT,
+        CONCAT_NULL_YIELDS_NULL ON;
+    SET NUMERIC_ROUNDABORT OFF;
+
+	BEGIN TRY 
+		SELECT 
+			b.*
+		FROM 
+			BulletCollectionBullet AS bcb
+		INNER JOIN 
+			Bullet AS b
+			ON bcb.BulletId = b.BulletId
+			AND b.Deleted = 'False'
+		WHERE 
+			bcb.BulletCollectionId = @BULLETCOLLECTIONID
+			AND bcb.Deleted = 'False'
+	END TRY 
+	BEGIN CATCH
+ 
+        DECLARE @ErrorMessage NVARCHAR(4000)
+        DECLARE @ErrorSeverity INT
+        DECLARE @ErrorState INT
+ 
+        SELECT  @ErrorMessage = ERROR_MESSAGE(),
+                @ErrorSeverity = ERROR_SEVERITY(),
+                @ErrorState = ERROR_STATE()
+ 
+        RAISERROR ( @ErrorMessage, @ErrorSeverity, @ErrorState)
+    END CATCH
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[BulletCollectionBullet]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bullet]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[BulletCollectionBullet].[BulletId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bullet].[BulletId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bullet].[Deleted]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[BulletCollectionBullet].[BulletCollectionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spBulletGetByCollection].[@BULLETCOLLECTIONID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[BulletCollectionBullet].[Deleted]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spBulletGetByCollection].[@BULLETCOLLECTIONID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="954" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spBulletGetByCollection]&#xD;&#xA;&#x9;@BULLETCOLLECTIONID&#x9;&#x9;INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[spJournalAddUpdate]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
@@ -4450,6 +4557,495 @@ END]]></Value>
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spJournalAddUpdate]&#xD;&#xA;     @JournalId&#x9;&#x9;INT&#xD;&#xA;&#x9;,@OwnerId&#x9;&#x9;UNIQUEIDENTIFIER&#xD;&#xA;&#x9;,@Title&#x9;&#x9;&#x9;VARCHAR(75)&#xD;&#xA;&#x9;,@Description&#x9;VARCHAR(1024)&#xD;&#xA;&#x9;,@CoverUrl&#x9;&#x9;VARCHAR(255)&#xD;&#xA;&#x9;,@UserId&#x9;&#x9;UNIQUEIDENTIFIER&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spJournalBulletCollectionAddUpdate]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+    SET XACT_ABORT,
+        QUOTED_IDENTIFIER,
+        ANSI_NULLS,
+        ANSI_PADDING,
+        ANSI_WARNINGS,
+        ARITHABORT,
+        CONCAT_NULL_YIELDS_NULL ON;
+    SET NUMERIC_ROUNDABORT OFF;
+
+	BEGIN TRY
+		IF EXISTS(SELECT 1 FROM JournalBulletCollection WHERE BulletCollectionId = @BULLETCOLLECTIONID AND JournalId = @JOURNALID) 
+			BEGIN
+				UPDATE 
+					JournalBulletCollection
+				SET 
+					Deleted = 'False'
+					,LastActionDate = GETDATE()
+					,LastActionUserId = @SESSIONUSERID
+				WHERE 
+					JournalId = @JOURNALID
+					AND BulletCollectionId = @BULLETCOLLECTIONID
+			END
+		ELSE
+			BEGIN 
+				INSERT INTO
+					JournalBulletCollection
+				(
+					JournalId
+					,BulletCollectionId
+					,Deleted
+					,CreateDate
+					,LastActionDate
+					,CreateUserId
+					,LastActionUserId
+				)
+				VALUES
+				(
+					@JOURNALID
+					,@BULLETCOLLECTIONID
+					,'False'
+					,GETDATE()
+					,GETDATE()
+					,@SESSIONUSERID
+					,@SESSIONUSERID
+				)
+			END
+	END TRY
+	BEGIN CATCH
+		IF @@ERROR<>0 AND @@TRANCOUNT > 0
+			ROLLBACK TRANSACTION
+
+		DECLARE
+			@ErrorMessage nvarchar(4000) = ERROR_MESSAGE(),
+			@ErrorNumber int = ERROR_NUMBER(),
+			@ErrorSeverity int = ERROR_SEVERITY(),
+			@ErrorState int = ERROR_STATE(),
+			@ErrorLine int = ERROR_LINE(),
+			@ErrorProcedure nvarchar(200) = ISNULL(ERROR_PROCEDURE(), '-');
+		SELECT @ErrorMessage = N'Error %d, Level %d, State %d, Procedure %s, Line %d, ' + 'Message: ' + @ErrorMessage;
+		RAISERROR (@ErrorMessage, @ErrorSeverity, 1, @ErrorNumber, @ErrorSeverity, @ErrorState, @ErrorProcedure, @ErrorLine)
+
+		--THROW --if on SQL2012 or above	
+	END CATCH
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[BulletCollectionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalBulletCollectionAddUpdate].[@BULLETCOLLECTIONID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[JournalId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalBulletCollectionAddUpdate].[@JOURNALID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[Deleted]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[LastActionDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[LastActionUserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalBulletCollectionAddUpdate].[@SESSIONUSERID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[JournalId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[BulletCollectionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[CreateDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[CreateUserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalBulletCollectionAddUpdate].[@JOURNALID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalBulletCollectionAddUpdate].[@BULLETCOLLECTIONID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalBulletCollectionAddUpdate].[@SESSIONUSERID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1838" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spJournalBulletCollectionAddUpdate]&#xD;&#xA;&#x9;@JOURNALID&#x9;&#x9;&#x9;&#x9;INT&#xD;&#xA;&#x9;,@BULLETCOLLECTIONID&#x9;INT&#xD;&#xA;&#x9;,@SESSIONUSERID&#x9;&#x9;&#x9;UNIQUEIDENTIFIER&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spJournalBulletCollectionDelete]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+    SET XACT_ABORT,
+        QUOTED_IDENTIFIER,
+        ANSI_NULLS,
+        ANSI_PADDING,
+        ANSI_WARNINGS,
+        ARITHABORT,
+        CONCAT_NULL_YIELDS_NULL ON;
+    SET NUMERIC_ROUNDABORT OFF;
+
+	BEGIN TRY
+		UPDATE 
+			JournalBulletCollection
+		SET 
+			Deleted = 'True'
+			,LastActionDate = GETDATE()
+			,LastActionUserId = @SESSIONUSERID
+		WHERE 
+			JournalId = @JOURNALID
+			AND BulletCollectionId = @BULLETCOLLECTIONID
+	END TRY
+	BEGIN CATCH
+		DECLARE
+			@ErrorMessage nvarchar(4000) = ERROR_MESSAGE(),
+			@ErrorNumber int = ERROR_NUMBER(),
+			@ErrorSeverity int = ERROR_SEVERITY(),
+			@ErrorState int = ERROR_STATE(),
+			@ErrorLine int = ERROR_LINE(),
+			@ErrorProcedure nvarchar(200) = ISNULL(ERROR_PROCEDURE(), '-');
+		SELECT @ErrorMessage = N'Error %d, Level %d, State %d, Procedure %s, Line %d, ' + 'Message: ' + @ErrorMessage;
+		RAISERROR (@ErrorMessage, @ErrorSeverity, 1, @ErrorNumber, @ErrorSeverity, @ErrorState, @ErrorProcedure, @ErrorLine)
+
+		--THROW --if on SQL2012 or above	
+	END CATCH
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[Deleted]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[LastActionDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[LastActionUserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalBulletCollectionDelete].[@SESSIONUSERID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[JournalId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalBulletCollectionDelete].[@JOURNALID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[BulletCollectionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalBulletCollectionDelete].[@BULLETCOLLECTIONID]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalBulletCollectionDelete].[@BULLETCOLLECTIONID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalBulletCollectionDelete].[@JOURNALID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalBulletCollectionDelete].[@SESSIONUSERID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1219" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spJournalBulletCollectionDelete]&#xD;&#xA;&#x9;@BULLETCOLLECTIONID&#x9;&#x9;&#x9;INT&#xD;&#xA;&#x9;,@JOURNALID&#x9;&#x9;&#x9;&#x9;&#x9;INT&#xD;&#xA;&#x9;,@SESSIONUSERID&#x9;&#x9;&#x9;&#x9;UNIQUEIDENTIFIER&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spJournalBulletCollectionGet]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	SET NOCOUNT ON;
+    SET XACT_ABORT,
+        QUOTED_IDENTIFIER,
+        ANSI_NULLS,
+        ANSI_PADDING,
+        ANSI_WARNINGS,
+        ARITHABORT,
+        CONCAT_NULL_YIELDS_NULL ON;
+    SET NUMERIC_ROUNDABORT OFF;
+
+	BEGIN TRY
+		SELECT 
+			@JOURNALID AS JournalId
+			,bc.*
+			,b.*
+		FROM
+			JournalBulletCollection AS jbc
+		INNER JOIN 
+			BulletCollection AS bc
+			ON jbc.BulletCollectionId = bc.BulletCollectionId
+			AND bc.Deleted = 'False'
+		INNER JOIN 
+			BulletCollectionBullet AS bcb
+			ON bc.BulletCollectionId = bcb.BulletCollectionId
+			AND bcb.Deleted = 'False'
+		INNER JOIN 
+			Bullet AS b
+			ON bcb.BulletId = b.BulletId
+			AND b.Deleted = 'False'
+		WHERE 
+			jbc.JournalId = @JOURNALID
+			AND jbc.Deleted = 'False'
+	END TRY
+	BEGIN CATCH
+		DECLARE
+			@ErrorMessage nvarchar(4000) = ERROR_MESSAGE(),
+			@ErrorNumber int = ERROR_NUMBER(),
+			@ErrorSeverity int = ERROR_SEVERITY(),
+			@ErrorState int = ERROR_STATE(),
+			@ErrorLine int = ERROR_LINE(),
+			@ErrorProcedure nvarchar(200) = ISNULL(ERROR_PROCEDURE(), '-');
+		SELECT @ErrorMessage = N'Error %d, Level %d, State %d, Procedure %s, Line %d, ' + 'Message: ' + @ErrorMessage;
+		RAISERROR (@ErrorMessage, @ErrorSeverity, 1, @ErrorNumber, @ErrorSeverity, @ErrorState, @ErrorProcedure, @ErrorLine)
+
+		--THROW --if on SQL2012 or above	
+	END CATCH
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[BulletCollection]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[BulletCollectionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[BulletCollection].[BulletCollectionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[BulletCollection].[Deleted]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[BulletCollectionBullet]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[BulletCollection].[BulletCollectionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[BulletCollectionBullet].[BulletCollectionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[BulletCollectionBullet].[Deleted]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bullet]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[BulletCollectionBullet].[BulletId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bullet].[BulletId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Bullet].[Deleted]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalBulletCollectionGet].[@JOURNALID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[JournalId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalBulletCollection].[Deleted]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalBulletCollectionGet].[@JOURNALID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1443" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spJournalBulletCollectionGet]&#xD;&#xA;&#x9;@JOURNALID&#x9;&#x9;INT&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[spJournalDelete]">

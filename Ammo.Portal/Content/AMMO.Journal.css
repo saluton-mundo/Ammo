@@ -5,8 +5,8 @@
 }
 
 .journal-page-canvas {
-    height: 100vh;
-    padding-top: 75px;
+    height: 92vh;
+    margin-top: 75px;
     background: #f9f9f9;
     overflow-y: auto;
 }
@@ -33,6 +33,16 @@
     width: 50px;
     z-index: 10;
 }
+
+.journal-index-customize-a {
+    height: 35px;
+    width: 35px;
+    float: right;
+}
+    .journal-index-customize-a-img {
+        height:35px;
+        width:35px;
+    }
 
 /*---------------------------------------
    TOOLBOX

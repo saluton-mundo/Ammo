@@ -23,17 +23,19 @@
                         <h3>
                             Journal Key
                             <small class="whats-this" id="whats-this-3">What's this?</small>
+                            <a href="javascript:void(0)" class="journal-index-customize-a "><img class="journal-index-customize-a-img" src="~/Assets/icons/settings.png" /></a>
                         </h3>
                     </div> <!-- /.heading-block -->
                 </div>
-                @if (Model.Bullets != null)
+                @if (Model.BulletCollection != null)
                 {
                     <!-- Show contents of current bullet collection -->
+                    @Html.Partial("~/Views/Bullet/_List.cshtml", Model.BulletCollection.Bullets)
                 }
                 else
                 {
                     <!-- No Bullet Collection! -->
-                    <a href="javascript:void(0)">
+                    <a href="@Url.Action("SelectList", "BulletCollection", new { @JournalId = Model.JournalId })" data-ajax="true" data-ajax-success="JOURNAL.OnShowBulletCollectionSuccess">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <img class="index-no-data-img" src="~/Assets/icons/add-list.png" />
                             <h2 class="index-no-data-h2">A key is essential to your Journal.. Click to add one now!</h2>
@@ -45,6 +47,7 @@
                         <h3>
                             Tags
                             <small class="whats-this" id="whats-this-3">What's this?</small>
+                            <a href="javascript:void(0)" class="journal-index-customize-a "><img class="journal-index-customize-a-img" src="~/Assets/icons/settings.png" /></a>
                         </h3>
                     </div> <!-- /.heading-block -->                    
                 </div>
@@ -65,6 +68,7 @@
                         <h3>
                             Bookmarks
                             <small class="whats-this" id="whats-this-3">What's this?</small>
+                            <a href="javascript:void(0)" class="journal-index-customize-a "><img class="journal-index-customize-a-img" src="~/Assets/icons/settings.png" /></a>
                         </h3>
                     </div> <!-- /.heading-block -->
                 </div>

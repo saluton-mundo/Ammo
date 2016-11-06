@@ -8,9 +8,9 @@ namespace Ammo.Domain.Entities
 {
     public class BulletCollection : BaseEntity
     {
-        public int BullectCollectionId { get; set; }
+        public int BulletCollectionId { get; set; }
         public string Name { get; set; }
-        public string CreateUserId { get; set; }
+        public Guid CreateUserId { get; set; }
         public bool IsAmmoDefault { get; set; }
         public IEnumerable<Bullet> Bullets { get; set; }
     }

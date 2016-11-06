@@ -1,4 +1,10 @@
-﻿.bullet-collection {
+﻿.bullet-collection-div {
+    padding:1em;
+}
+.bullet-collection-div-h3 {
+    padding: 10px;
+}
+.bullet-collection {
   /* Prevent vertical gaps */
   line-height: 0;
   max-height:400px;
@@ -14,6 +20,25 @@
   /* Just in case there are in-line attributes */
   width: 100% !important;
   height: auto !important;
+  padding:5px;
+}
+
+.bullet-list-div {
+    padding:5px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.bullet-list-bullet-img {
+    position: relative;
+    height: 35px;
+    width: 35px;
+    padding: 0;
+    left: 1px;
+    top: 0;
+}
+.bullet-list-bullet-meaning {
+    text-align: left;
+    line-height: 2;
 }
 
 @media (max-width: 1200px) {

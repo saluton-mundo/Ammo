@@ -10,6 +10,7 @@ namespace Ammo.Domain.Repositories.Abstract
     public interface IBulletRepository
     {
         IEnumerable<Bullet> Get(int? BulletId);
+        IEnumerable<Bullet> GetByCollection(int BulletCollectionId);
         int AddUpdate(Bullet Bullet, string SessionUserId);
         int Delete(int BulletId, string SessionUserId);
     }

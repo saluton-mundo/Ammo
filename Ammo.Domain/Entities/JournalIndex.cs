@@ -10,7 +10,7 @@ namespace Ammo.Domain.Entities
     {
         public int JournalId { get; set; }
         public Guid OwnerId { get; set; }
-        public BulletCollection Bullets { get; set; }
+        public BulletCollection BulletCollection { get; set; }
         public IEnumerable<JournalTag> Tags { get; set; }
         public IEnumerable<JournalBookmark> Bookmarks { get; set; }
     }

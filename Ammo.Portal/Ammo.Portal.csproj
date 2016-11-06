@@ -403,7 +403,6 @@
     <Folder Include="Media\ImageUploads\Bullets\" />
     <Folder Include="Media\VideoUploads\" />
     <Folder Include="Scripts\Services\" />
-    <Folder Include="Views\Bullet\" />
     <Folder Include="Views\JournalBulletCollection\" />
     <Folder Include="Views\JournalCover\" />
     <Folder Include="Views\JournalPageTemplate\" />
@@ -440,6 +439,7 @@
     <Content Include="Views\Shared\_LoggedInJournalLayout.cshtml" />
     <Content Include="Views\BulletCollection\_List.cshtml" />
     <Content Include="Views\BulletCollection\_SelectList.cshtml" />
+    <Content Include="Views\Bullet\_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ammo.Domain\Ammo.Domain.csproj">

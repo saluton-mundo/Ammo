@@ -28,11 +28,11 @@ namespace Ammo.Domain.Repositories.Concrete
                 {
                     index = reader.Read<JournalIndex>().SingleOrDefault();
 
-                    index.Bookmarks = reader.Read<JournalBookmark>().ToList();
-
-                    index.Bullets = reader.Read<BulletCollection>().SingleOrDefault();
-
+                    index.BulletCollection = reader.Read<BulletCollection>().SingleOrDefault();
+                    
                     index.Tags = reader.Read<JournalTag>().ToList();
+
+                    index.Bookmarks = reader.Read<JournalBookmark>().ToList();
                 }
             }
 

@@ -1,29 +1,42 @@
-﻿@model IEnumerable<Ammo.Domain.Entities.JournalBulletCollection>
+﻿@model Ammo.Domain.Entities.JournalBulletCollection
 @{
     Layout = null;
 }
-<div class="col-lg-12 col-md-12 col-sm-12">
-    @if (Model != null && Model.Count() > 0)
-    {
-        foreach (Ammo.Domain.Entities.BulletCollection collection in Model.Collections)
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        @if (Model.Collections != null && Model.Collections.Count() > 0)
         {
-            <div class="col-lg-4 col-md-3 col-sm-12" id="bullet-collection-@collection.BullectCollectionId">
-                <section class="bullet-collection">
-                    @if (collection.Bullets != null && collection.Bullets.Count() > 0)
+            foreach (Ammo.Domain.Entities.BulletCollection collection in Model.Collections)
+            {
+                <div class="col-lg-@Html.Raw(12/Model.Collections.Count()) col-md-@Html.Raw(12/Model.Collections.Count()) col-sm-12 bullet-collection-div" id="bullet-collection-@collection.BulletCollectionId">
+                    <section class="bullet-collection">
+                        @if (collection.Bullets != null && collection.Bullets.Count() > 0)
                     {
                         foreach (Ammo.Domain.Entities.Bullet bullet in collection.Bullets)
                         {
-                            <img src="@Url.Action("BulletGet", "Image", new { BulletUri = bullet.ImageUri })" />
+                                <img src="@Url.Action("BulletGet", "Image", new { BulletUri = bullet.ImageUri })" />
+                            }
                         }
+                    </section>
+                    <h3 class="bullet-collection-div-h3">@Html.Raw(collection.Name)</h3>
+                    @using (Ajax.BeginForm("Save", "JournalBulletCollection", null, new AjaxOptions() { OnSuccess = "JOURNAL.OnBulletCollectionSuccess", OnFailure = "JOURNAL.OnBulletCollectionError" }, new { @id = Html.Raw(collection.BulletCollectionId) }))
+                    {
+                        @Html.HiddenFor(m => m.SelectedBulletCollectionId, new { @value = collection.BulletCollectionId })
+                        @Html.HiddenFor(m => m.JournalId)
+                        <button form="@collection.BulletCollectionId" type="submit" class="btn standard-button green-button green-outline"> USE THIS COLLECTION</button>
                     }
-                </section>
-                <h1>@Html.Raw(collection.Name)</h1>
-                @using (Ajax.BeginForm("Save", "JournalBulletCollection", null, new AjaxOptions() { OnSuccess = "JOURNAL.OnBulletCollectionSuccess", OnFailure = "JOURNAL.OnBulletCollectionError" }, new { @id = Html.Raw(collection.BullectCollectionId) }))
-                {
-                    @Html.HiddenFor(m => m.SelectedBulletCollectionId, new { @value = collection.BullectCollectionId })
-                    <button form="@collection.BullectCollectionId" type="submit" class="btn standard-button green-button green-outline"> USE THIS COLLECTION</button>
-                }
-            </div>
+                </div>
+            }
         }
-    }
+    </div>
+</div>
+<div class="four-lines">
+    <div class="line red-line-bottom">
+    </div>
+    <div class="line green-line-bottom">
+    </div>
+    <div class="line purple-line-bottom">
+    </div>
+    <div class="line yellow-line-bottom">
+    </div>
 </div>

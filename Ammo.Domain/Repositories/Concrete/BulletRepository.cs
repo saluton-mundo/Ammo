@@ -28,6 +28,22 @@ namespace Ammo.Domain.Repositories.Concrete
             }
         }
 
+        public IEnumerable<Bullet> GetByCollection(int BulletCollectionId)
+        {
+            using(var connection = new SqlConnection(base.ConnectionString))
+            {
+                return Task.FromResult(connection.Query<Bullet>("spBulletGetByCollection",
+                                                                new
+                                                                {
+                                                                    @BULLETCOLLECTIONID = BulletCollectionId
+                                                                },
+                                                                null,
+                                                                true,
+                                                                null,
+                                                                System.Data.CommandType.StoredProcedure)).Result;
+            }
+        }
+
         public int AddUpdate(Bullet Bullet, string SessionUserId)
         {
             using(var connection = new SqlConnection(base.ConnectionString))

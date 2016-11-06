@@ -111,6 +111,10 @@
     <Build Include="dbo\Stored Procedures\spBulletGet.sql" />
     <Build Include="dbo\Stored Procedures\spBulletAddUpdate.sql" />
     <Build Include="dbo\Stored Procedures\spBulletDelete.sql" />
+    <Build Include="dbo\Stored Procedures\spJournalBulletCollectionAddUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\spJournalBulletCollectionDelete.sql" />
+    <Build Include="dbo\Stored Procedures\spJournalBulletCollectionGet.sql" />
+    <Build Include="dbo\Stored Procedures\spBulletGetByCollection.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Ammo.Database.refactorlog" />
