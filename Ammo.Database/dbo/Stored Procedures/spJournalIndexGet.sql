@@ -32,23 +32,16 @@ BEGIN
 		SELECT 
 			bc.BulletCollectionId
 			,bc.Name
-			,b.*
 		FROM 
 			Journal AS j
- 		LEFT OUTER JOIN 
+ 		INNER JOIN 
 			JournalBulletCollection AS jbc
 			ON 	j.JournalId = jbc.JournalId
 			AND jbc.Deleted = 'False'
-		LEFT OUTER JOIN 
+		INNER JOIN 
 			BulletCollection AS bc
 			ON ISNULL(jbc.BulletCollectionId, 2) = bc.BulletCollectionId
 			AND bc.Deleted = 'False'
-		INNER JOIN 
-			BulletCollectionBullet AS bcb
-			ON bc.BulletCollectionId = bcb.BulletCollectionId
-		INNER JOIN 
-			Bullet AS b
-			ON bcb.BulletId = b.BulletId 
 		WHERE 
 			j.JournalId = @JOURNALID
 			AND j.Deleted = 'False';

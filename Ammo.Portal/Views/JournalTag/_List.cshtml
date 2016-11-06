@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Ammo.Domain.Entities.JournalTag>
+@{ 
+    Layout = null;
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.JournalId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TagId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TagContent)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JournalId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TagId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TagContent)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

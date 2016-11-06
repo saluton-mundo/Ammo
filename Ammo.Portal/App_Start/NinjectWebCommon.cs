@@ -67,10 +67,7 @@ namespace Ammo.Portal.App_Start
             }
         }
 
-        /// <summary>
-        /// Load your modules or register your services here!
-        /// </summary>
-        /// <param name="kernel">The kernel.</param>
+  
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IBaseService>().To<BaseService>();
@@ -83,6 +80,7 @@ namespace Ammo.Portal.App_Start
             kernel.Bind<IJournalIndexService>().To<JournalIndexService>();
             kernel.Bind<IJournalCoverService>().To<JournalCoverService>();
             kernel.Bind<IJournalTagService>().To<JournalTagService>();
+            kernel.Bind<IJournalTemplateService>().To<JournalTemplateService>();
         }        
 
         private static void RegisterRepositories(IKernel kernel)
@@ -95,6 +93,7 @@ namespace Ammo.Portal.App_Start
             kernel.Bind<IJournalBulletCollectionRepository>().To<JournalBulletCollectionRepository>();
             kernel.Bind<IJournalIndexRepository>().To<JournalIndexRepository>();
             kernel.Bind<IJournalTagRepository>().To<JournalTagRepository>();
+            kernel.Bind<IJournalTemplateRepository>().To<JournalTemplateRepository>();
             kernel.Bind<ISubscriptionRepository>().To<SubscriptionRepository>();
         }
     }

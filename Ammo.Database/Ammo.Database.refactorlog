@@ -56,4 +56,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="BookmarkId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="7b02d00e-41c4-4624-8f10-fcede7599450" ChangeDateTime="11/06/2016 17:58:37">
+    <Property Name="ElementName" Value="[dbo].[JournalTemplate].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[JournalTemplate]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TemplateId" />
+  </Operation>
 </Operations>

@@ -285,6 +285,22 @@
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
 		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[0]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[JournalTemplate]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[Price]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
@@ -302,7 +318,7 @@
 					<References Name="[dbo].[JournalBookmark]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -321,7 +337,7 @@
 					<References Name="[dbo].[JournalTag]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -349,7 +365,7 @@
 					<References Name="[dbo].[JournalBulletCollection]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -377,7 +393,7 @@
 					<References Name="[dbo].[JournalPage]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -396,7 +412,7 @@
 					<References Name="[dbo].[Journal]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -415,7 +431,7 @@
 					<References Name="[dbo].[SubscriptionUser]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -434,7 +450,26 @@
 					<References Name="[dbo].[Subscription]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[JournalTemplate].[TemplateId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[JournalTemplate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Bullet]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -504,7 +539,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
+						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -577,7 +612,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="28" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[BulletCollection]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -630,7 +665,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
+						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="29" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -720,7 +755,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="28" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="30" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[BulletCollectionBullet]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -771,7 +806,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="29" />
+						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="31" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -844,7 +879,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="30" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="32" />
 		</Element>
 		<Element Type="SqlDefaultConstraint" Name="[dbo].[DF_Bullet_Deleted]">
 			<Property Name="DefaultExpressionScript">
@@ -860,7 +895,7 @@
 					<References Name="[dbo].[Bullet].[Deleted]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="25" />
+			<AttachedAnnotation Disambiguator="27" />
 		</Element>
 		<Element Type="SqlDefaultConstraint" Name="[dbo].[DF_BulletCollection_Deleted]">
 			<Property Name="DefaultExpressionScript">
@@ -876,7 +911,7 @@
 					<References Name="[dbo].[BulletCollection].[Deleted]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="27" />
+			<AttachedAnnotation Disambiguator="29" />
 		</Element>
 		<Element Type="SqlDefaultConstraint" Name="[dbo].[DF_BulletCollectionBullet_Deleted]">
 			<Property Name="DefaultExpressionScript">
@@ -892,7 +927,7 @@
 					<References Name="[dbo].[BulletCollectionBullet].[Deleted]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="29" />
+			<AttachedAnnotation Disambiguator="31" />
 		</Element>
 		<Element Type="SqlDefaultConstraint" Name="[dbo].[DF_IdentityUser_CreateDate]">
 			<Property Name="DefaultExpressionScript">
@@ -908,7 +943,7 @@
 					<References Name="[dbo].[IdentityUser].[CreateDate]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="31" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="33" />
 		</Element>
 		<Element Type="SqlDefaultConstraint" Name="[dbo].[DF_IdentityUser_ModifyDate]">
 			<Property Name="DefaultExpressionScript">
@@ -924,7 +959,7 @@
 					<References Name="[dbo].[IdentityUser].[ModifyDate]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="32" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="34" />
 		</Element>
 		<Element Type="SqlDefaultConstraint" Name="[dbo].[DF_IdentityUserProfile_CreateDate]">
 			<Property Name="DefaultExpressionScript">
@@ -940,7 +975,7 @@
 					<References Name="[dbo].[IdentityProfile].[CreateDate]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="33" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="35" />
 		</Element>
 		<Element Type="SqlDefaultConstraint" Name="[dbo].[DF_IdentityUserProfile_ModifyDate]">
 			<Property Name="DefaultExpressionScript">
@@ -956,7 +991,7 @@
 					<References Name="[dbo].[IdentityProfile].[ModifyDate]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="34" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="36" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_dbo.IdentityClaim_dbo.IdentityUser_UserId]">
 			<Property Name="OnDeleteAction" Value="1" />
@@ -980,7 +1015,7 @@
 					<References Name="[dbo].[IdentityUser]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="35" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="37" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_dbo.IdentityLogin_dbo.IdentityUser_UserId]">
 			<Property Name="OnDeleteAction" Value="1" />
@@ -1004,7 +1039,7 @@
 					<References Name="[dbo].[IdentityUser]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="36" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="38" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_dbo.IdentityUserRole_dbo.IdentityRole_RoleId]">
 			<Property Name="OnDeleteAction" Value="1" />
@@ -1028,7 +1063,7 @@
 					<References Name="[dbo].[IdentityRole]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="37" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="39" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_dbo.IdentityUserRole_dbo.IdentityUser_UserId]">
 			<Property Name="OnDeleteAction" Value="1" />
@@ -1052,7 +1087,7 @@
 					<References Name="[dbo].[IdentityUser]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="38" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="40" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_IdentityProfile_IdentityUser]">
 			<Property Name="OnDeleteAction" Value="1" />
@@ -1076,7 +1111,7 @@
 					<References Name="[dbo].[IdentityUser]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="39" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="41" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Journal_LastActionUser]">
 			<Relationship Name="Columns">
@@ -1099,7 +1134,7 @@
 					<References Name="[dbo].[IdentityUser]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="40" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="42" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Journal_Owner]">
 			<Relationship Name="Columns">
@@ -1122,7 +1157,7 @@
 					<References Name="[dbo].[IdentityUser]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="41" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="43" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_SubscriptionUser_UserId]">
 			<Relationship Name="Columns">
@@ -1145,7 +1180,7 @@
 					<References Name="[dbo].[IdentityUser]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="42" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="44" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[IdentityClaim]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1220,8 +1255,8 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="43" />
-			<AttachedAnnotation Disambiguator="35" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="45" />
+			<AttachedAnnotation Disambiguator="37" />
 		</Element>
 		<Element Type="SqlIndex" Name="[dbo].[IdentityClaim].[IX_UserId]">
 			<Relationship Name="ColumnSpecifications">
@@ -1317,8 +1352,8 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="44" />
-			<AttachedAnnotation Disambiguator="36" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="46" />
+			<AttachedAnnotation Disambiguator="38" />
 		</Element>
 		<Element Type="SqlIndex" Name="[dbo].[IdentityLogin].[IX_UserId]">
 			<Relationship Name="ColumnSpecifications">
@@ -1435,7 +1470,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="33" />
+						<AttachedAnnotation Disambiguator="35" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1468,7 +1503,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="34" />
+						<AttachedAnnotation Disambiguator="36" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1494,8 +1529,8 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="45" />
-			<AttachedAnnotation Disambiguator="39" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="47" />
+			<AttachedAnnotation Disambiguator="41" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[IdentityRole]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1539,7 +1574,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="46" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="48" />
 		</Element>
 		<Element Type="SqlIndex" Name="[dbo].[IdentityRole].[RoleNameIndex]">
 			<Property Name="IsUnique" Value="True" />
@@ -1785,7 +1820,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="31" />
+						<AttachedAnnotation Disambiguator="33" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1818,7 +1853,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="32" />
+						<AttachedAnnotation Disambiguator="34" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1844,7 +1879,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="47" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="49" />
 		</Element>
 		<Element Type="SqlIndex" Name="[dbo].[IdentityUser].[UserNameIndex]">
 			<Property Name="IsUnique" Value="True" />
@@ -1923,9 +1958,9 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="48" />
-			<AttachedAnnotation Disambiguator="37" />
-			<AttachedAnnotation Disambiguator="38" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="50" />
+			<AttachedAnnotation Disambiguator="39" />
+			<AttachedAnnotation Disambiguator="40" />
 		</Element>
 		<Element Type="SqlIndex" Name="[dbo].[IdentityUserRole].[IX_RoleId]">
 			<Relationship Name="ColumnSpecifications">
@@ -1981,7 +2016,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="22" />
+						<AttachedAnnotation Disambiguator="23" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2123,8 +2158,8 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="41" />
-			<AttachedAnnotation Disambiguator="40" />
+			<AttachedAnnotation Disambiguator="43" />
+			<AttachedAnnotation Disambiguator="42" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[JournalBookmark]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2144,7 +2179,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="18" />
+						<AttachedAnnotation Disambiguator="19" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2405,7 +2440,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="20" />
+			<AttachedAnnotation Disambiguator="21" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[JournalPage]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2546,7 +2581,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="21" />
+			<AttachedAnnotation Disambiguator="22" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[JournalTag]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2566,7 +2601,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="19" />
+						<AttachedAnnotation Disambiguator="20" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2690,6 +2725,182 @@
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlTable" Name="[dbo].[JournalTemplate]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[JournalTemplate].[TemplateId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="26" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[JournalTemplate].[Name]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[JournalTemplate].[TemplateUri]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[JournalTemplate].[IsPremium]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[JournalTemplate].[Price]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Precision" Value="53" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[float]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="18" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[JournalTemplate].[Deleted]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[JournalTemplate].[CreateDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[JournalTemplate].[LastActionDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[JournalTemplate].[CreateUserId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[JournalTemplate].[LastActionUserId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_Bullet]">
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
@@ -2707,7 +2918,7 @@
 					<References Name="[dbo].[Bullet]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="26" />
+			<AttachedAnnotation Disambiguator="28" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_BulletCollection]">
 			<Relationship Name="ColumnSpecifications">
@@ -2726,7 +2937,7 @@
 					<References Name="[dbo].[BulletCollection]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="28" />
+			<AttachedAnnotation Disambiguator="30" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_BulletCollectionBullet]">
 			<Relationship Name="ColumnSpecifications">
@@ -2754,7 +2965,7 @@
 					<References Name="[dbo].[BulletCollectionBullet]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="30" />
+			<AttachedAnnotation Disambiguator="32" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_dbo.IdentityClaim]">
 			<Relationship Name="ColumnSpecifications">
@@ -2773,7 +2984,7 @@
 					<References Name="[dbo].[IdentityClaim]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="43" />
+			<AttachedAnnotation Disambiguator="45" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_dbo.IdentityRole]">
 			<Relationship Name="ColumnSpecifications">
@@ -2792,7 +3003,7 @@
 					<References Name="[dbo].[IdentityRole]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="46" />
+			<AttachedAnnotation Disambiguator="48" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_dbo.IdentityUser]">
 			<Relationship Name="ColumnSpecifications">
@@ -2811,7 +3022,7 @@
 					<References Name="[dbo].[IdentityUser]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="47" />
+			<AttachedAnnotation Disambiguator="49" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_dbo.IdentityUserRole]">
 			<Relationship Name="ColumnSpecifications">
@@ -2839,7 +3050,7 @@
 					<References Name="[dbo].[IdentityUserRole]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="48" />
+			<AttachedAnnotation Disambiguator="50" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_IdentityLogin]">
 			<Relationship Name="ColumnSpecifications">
@@ -2876,7 +3087,7 @@
 					<References Name="[dbo].[IdentityLogin]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="44" />
+			<AttachedAnnotation Disambiguator="46" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_IdentityProfile]">
 			<Relationship Name="ColumnSpecifications">
@@ -2895,7 +3106,7 @@
 					<References Name="[dbo].[IdentityProfile]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="45" />
+			<AttachedAnnotation Disambiguator="47" />
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[spBulletAddUpdate]">
 			<Property Name="BodyScript">
@@ -5366,23 +5577,16 @@ BEGIN
 		SELECT 
 			bc.BulletCollectionId
 			,bc.Name
-			,b.*
 		FROM 
 			Journal AS j
- 		LEFT OUTER JOIN 
+ 		INNER JOIN 
 			JournalBulletCollection AS jbc
 			ON 	j.JournalId = jbc.JournalId
 			AND jbc.Deleted = 'False'
-		LEFT OUTER JOIN 
+		INNER JOIN 
 			BulletCollection AS bc
 			ON ISNULL(jbc.BulletCollectionId, 2) = bc.BulletCollectionId
 			AND bc.Deleted = 'False'
-		INNER JOIN 
-			BulletCollectionBullet AS bcb
-			ON bc.BulletCollectionId = bcb.BulletCollectionId
-		INNER JOIN 
-			Bullet AS b
-			ON bcb.BulletId = b.BulletId 
 		WHERE 
 			j.JournalId = @JOURNALID
 			AND j.Deleted = 'False';
@@ -5479,27 +5683,6 @@ END]]></Value>
 					<References Name="[dbo].[BulletCollection].[Deleted]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[BulletCollectionBullet]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[BulletCollection].[BulletCollectionId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[BulletCollectionBullet].[BulletCollectionId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Bullet]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[BulletCollectionBullet].[BulletId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Bullet].[BulletId]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[BulletCollection].[BulletCollectionId]" />
-				</Entry>
-				<Entry>
 					<References Name="[dbo].[BulletCollection].[Name]" />
 				</Entry>
 				<Entry>
@@ -5553,10 +5736,483 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="2495" />
+				<Property Name="Length" Value="2308" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spJournalIndexGet]&#xD;&#xA;&#x9;@JOURNALID&#x9;INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spJournalTemplateAddUpdate]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	
+	SET NOCOUNT ON;
+    SET XACT_ABORT,
+        QUOTED_IDENTIFIER,
+        ANSI_NULLS,
+        ANSI_PADDING,
+        ANSI_WARNINGS,
+        ARITHABORT,
+        CONCAT_NULL_YIELDS_NULL ON;
+    SET NUMERIC_ROUNDABORT OFF;
+
+	BEGIN TRY 
+		IF EXISTS(SELECT 1 FROM JournalTemplate AS jt WHERE jt.TemplateId = @JOURNALTEMPLATEID) 
+			BEGIN 
+				UPDATE 
+					JournalTemplate
+				SET 
+					Name = ISNULL(@NAME, Name)
+					,TemplateUri = ISNULL(@TEMPLATEURI, TemplateUri)
+					,Price = CASE WHEN @SESSIONUSERID = CreateUserId THEN ISNULL(@PRICE, Price) ELSE Price END
+					,Deleted = 'False'
+					,LastActionDate = GETDATE()
+					,LastActionUserId = @SESSIONUSERID
+				WHERE 
+					TemplateId = @JOURNALTEMPLATEID
+			END
+		ELSE 
+			BEGIN
+				INSERT INTO JournalTemplate
+				(
+					Name
+					,TemplateUri
+					,IsPremium
+					,Price
+					,Deleted
+					,CreateDate
+					,LastActionDate
+					,CreateUserId
+					,LastActionUserId
+				)
+				VALUES
+				(
+					@NAME
+					,@TEMPLATEURI
+					,ISNULL(@ISPREMIUM, 'False')
+					,ISNULL(@PRICE, 0)
+					,'False'
+					,GETDATE()
+					,GETDATE()
+					,@SESSIONUSERID
+					,@SESSIONUSERID
+				) 
+			END
+	END TRY 
+	BEGIN CATCH
+ 
+        DECLARE @ErrorMessage NVARCHAR(4000)
+        DECLARE @ErrorSeverity INT
+        DECLARE @ErrorState INT
+ 
+        SELECT  @ErrorMessage = ERROR_MESSAGE(),
+                @ErrorSeverity = ERROR_SEVERITY(),
+                @ErrorState = ERROR_STATE()
+ 
+        RAISERROR ( @ErrorMessage, @ErrorSeverity, @ErrorState)
+    END CATCH
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[TemplateId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalTemplateAddUpdate].[@JOURNALTEMPLATEID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalTemplateAddUpdate].[@NAME]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[TemplateUri]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalTemplateAddUpdate].[@TEMPLATEURI]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[Price]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalTemplateAddUpdate].[@SESSIONUSERID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[CreateUserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalTemplateAddUpdate].[@PRICE]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[Deleted]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[LastActionDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[LastActionUserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[TemplateId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[IsPremium]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[CreateDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalTemplateAddUpdate].[@ISPREMIUM]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalTemplateAddUpdate].[@JOURNALTEMPLATEID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalTemplateAddUpdate].[@NAME]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalTemplateAddUpdate].[@TEMPLATEURI]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalTemplateAddUpdate].[@ISPREMIUM]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalTemplateAddUpdate].[@PRICE]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Precision" Value="53" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[float]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalTemplateAddUpdate].[@SESSIONUSERID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1785" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spJournalTemplateAddUpdate]&#xD;&#xA;&#x9; @JOURNALTEMPLATEID&#x9;&#x9;INT&#xD;&#xA;&#x9;,@NAME&#x9;&#x9;&#x9;&#x9;&#x9;VARCHAR(255)&#xD;&#xA;&#x9;,@TEMPLATEURI&#x9;&#x9;&#x9;VARCHAR(255)&#xD;&#xA;&#x9;,@ISPREMIUM&#x9;&#x9;&#x9;&#x9;BIT&#xD;&#xA;&#x9;,@PRICE&#x9;&#x9;&#x9;&#x9;&#x9;FLOAT&#xD;&#xA;&#x9;,@SESSIONUSERID&#x9;&#x9;&#x9;UNIQUEIDENTIFIER&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spJournalTemplateDelete]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	
+	SET NOCOUNT ON;
+    SET XACT_ABORT,
+        QUOTED_IDENTIFIER,
+        ANSI_NULLS,
+        ANSI_PADDING,
+        ANSI_WARNINGS,
+        ARITHABORT,
+        CONCAT_NULL_YIELDS_NULL ON;
+    SET NUMERIC_ROUNDABORT OFF;
+
+	BEGIN TRY 
+		UPDATE 
+			JournalTemplate
+		SET
+			Deleted = 'True'
+			,LastActionDate = GETDATE()
+			,LastActionUserId = @SESSIONUSERID
+		WHERE 
+			TemplateId = @JOURNALTEMPLATEID
+	END TRY 
+	BEGIN CATCH
+ 
+        DECLARE @ErrorMessage NVARCHAR(4000)
+        DECLARE @ErrorSeverity INT
+        DECLARE @ErrorState INT
+ 
+        SELECT  @ErrorMessage = ERROR_MESSAGE(),
+                @ErrorSeverity = ERROR_SEVERITY(),
+                @ErrorState = ERROR_STATE()
+ 
+        RAISERROR ( @ErrorMessage, @ErrorSeverity, @ErrorState)
+    END CATCH
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[Deleted]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[LastActionDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[LastActionUserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalTemplateDelete].[@SESSIONUSERID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[TemplateId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalTemplateDelete].[@JOURNALTEMPLATEID]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalTemplateDelete].[@JOURNALTEMPLATEID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalTemplateDelete].[@SESSIONUSERID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="923" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spJournalTemplateDelete]&#xD;&#xA;&#x9;@JOURNALTEMPLATEID&#x9;&#x9;INT&#xD;&#xA;&#x9;,@SESSIONUSERID&#x9;&#x9;&#x9;UNIQUEIDENTIFIER&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spJournalTemplateGet]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	
+	SET NOCOUNT ON;
+    SET XACT_ABORT,
+        QUOTED_IDENTIFIER,
+        ANSI_NULLS,
+        ANSI_PADDING,
+        ANSI_WARNINGS,
+        ARITHABORT,
+        CONCAT_NULL_YIELDS_NULL ON;
+    SET NUMERIC_ROUNDABORT OFF;
+
+	BEGIN TRY 
+		SELECT 
+			jt.*
+		FROM 
+			JournalTemplate AS jt
+		WHERE 
+			jt.TemplateId = ISNULL(@JOURNALTEMPLATEID, jt.TemplateId)
+			AND jt.IsPremium = ISNULL(@PREMIUMFLAG, jt.IsPremium)
+	END TRY 
+	BEGIN CATCH
+ 
+        DECLARE @ErrorMessage NVARCHAR(4000)
+        DECLARE @ErrorSeverity INT
+        DECLARE @ErrorState INT
+ 
+        SELECT  @ErrorMessage = ERROR_MESSAGE(),
+                @ErrorSeverity = ERROR_SEVERITY(),
+                @ErrorState = ERROR_STATE()
+ 
+        RAISERROR ( @ErrorMessage, @ErrorSeverity, @ErrorState)
+    END CATCH
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[TemplateId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalTemplateGet].[@JOURNALTEMPLATEID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[JournalTemplate].[IsPremium]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spJournalTemplateGet].[@PREMIUMFLAG]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalTemplateGet].[@JOURNALTEMPLATEID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spJournalTemplateGet].[@PREMIUMFLAG]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="914" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spJournalTemplateGet]&#xD;&#xA;&#x9;@JOURNALTEMPLATEID&#x9;&#x9;INT&#xD;&#xA;&#x9;,@PREMIUMFLAG&#x9;&#x9;&#x9;BIT&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[spRoleCreate]">
@@ -8439,7 +9095,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="24" />
+						<AttachedAnnotation Disambiguator="25" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -8518,7 +9174,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="23" />
+						<AttachedAnnotation Disambiguator="24" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -8592,7 +9248,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="42" />
+			<AttachedAnnotation Disambiguator="44" />
 		</Element>
 	</Model>
 </DataSchemaModel>

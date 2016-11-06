@@ -401,13 +401,11 @@
   <ItemGroup>
     <Folder Include="Media\AudioUploads\" />
     <Folder Include="Media\ImageUploads\Bullets\" />
+    <Folder Include="Media\TemplateUploads\" />
     <Folder Include="Media\VideoUploads\" />
     <Folder Include="Scripts\Services\" />
-    <Folder Include="Views\JournalBulletCollection\" />
-    <Folder Include="Views\JournalCover\" />
     <Folder Include="Views\JournalPageTemplate\" />
     <Folder Include="Views\JournalPage\" />
-    <Folder Include="Views\JournalTag\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\fonts\glyphicons-halflings-regular.woff" />
@@ -440,6 +438,7 @@
     <Content Include="Views\BulletCollection\_List.cshtml" />
     <Content Include="Views\BulletCollection\_SelectList.cshtml" />
     <Content Include="Views\Bullet\_List.cshtml" />
+    <Content Include="Views\JournalTag\_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ammo.Domain\Ammo.Domain.csproj">

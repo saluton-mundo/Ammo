@@ -66,6 +66,7 @@
     <Compile Include="Entities\JournalIndex.cs" />
     <Compile Include="Entities\JournalPage.cs" />
     <Compile Include="Entities\JournalTag.cs" />
+    <Compile Include="Entities\JournalTemplate.cs" />
     <Compile Include="Entities\Subscription.cs" />
     <Compile Include="Extensions\ORM\DapperExtensions.cs" />
     <Compile Include="Repositories\Abstract\IBookmarkRepository.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Repositories\Abstract\IJournalIndexRepository.cs" />
     <Compile Include="Repositories\Abstract\IJournalRepository.cs" />
     <Compile Include="Repositories\Abstract\IJournalTagRepository.cs" />
+    <Compile Include="Repositories\Abstract\IJournalTemplateRepository.cs" />
     <Compile Include="Repositories\Abstract\ISubscriptionRepository.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\Concrete\BookmarkRepository.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="Repositories\Concrete\JournalIndexRepository.cs" />
     <Compile Include="Repositories\Concrete\JournalRepository.cs" />
     <Compile Include="Repositories\Concrete\JournalTagRepository.cs" />
+    <Compile Include="Repositories\Concrete\JournalTemplateRepository.cs" />
     <Compile Include="Repositories\Concrete\SubscriptionRepository.cs" />
     <Compile Include="Services\Abstract\IBaseService.cs" />
     <Compile Include="Services\Abstract\IBookmarkService.cs" />
@@ -97,6 +100,7 @@
     <Compile Include="Services\Abstract\IJournalIndexService.cs" />
     <Compile Include="Services\Abstract\IJournalService.cs" />
     <Compile Include="Services\Abstract\IJournalTagService.cs" />
+    <Compile Include="Services\Abstract\IJournalTemplateService.cs" />
     <Compile Include="Services\Abstract\IRoleService.cs" />
     <Compile Include="Services\Abstract\IUserService..cs" />
     <Compile Include="Services\Concrete\BaseService.cs" />
@@ -109,6 +113,7 @@
     <Compile Include="Services\Concrete\JournalIndexService.cs" />
     <Compile Include="Services\Concrete\JournalService.cs" />
     <Compile Include="Services\Concrete\JournalTagService.cs" />
+    <Compile Include="Services\Concrete\JournalTemplateService.cs" />
     <Compile Include="Services\Concrete\RoleService.cs" />
     <Compile Include="Services\Concrete\UserService.cs" />
     <Compile Include="Utilities\IdentityConnection.cs" />
