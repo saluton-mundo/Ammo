@@ -9,5 +9,6 @@ namespace Ammo.Domain.Services.Concrete
 {
     public class UserService : BaseService, IUserService
     {
+        // TODO implement future user logic 
     }
 }

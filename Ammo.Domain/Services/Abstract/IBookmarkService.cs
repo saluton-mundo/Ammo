@@ -8,5 +8,6 @@ namespace Ammo.Domain.Services.Abstract
 {
     public interface IBookmarkService
     {
+        // TODO Implement Bookmark logic
     }
 }

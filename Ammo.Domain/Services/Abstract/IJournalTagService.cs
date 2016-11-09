@@ -8,5 +8,6 @@ namespace Ammo.Domain.Services.Abstract
 {
     public interface IJournalTagService
     {
+        // TODO define the Journal Tagging logic
     }
 }

@@ -8,5 +8,6 @@ namespace Ammo.Domain.Services.Abstract
 {
     public interface IRoleService
     {
+        // TODO implement role logic? 
     }
 }

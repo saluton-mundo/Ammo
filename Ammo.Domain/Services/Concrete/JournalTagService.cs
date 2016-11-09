@@ -9,5 +9,6 @@ namespace Ammo.Domain.Services.Concrete
 {
     public class JournalTagService : BaseService, IJournalTagService
     {
+        // TODO implement tagging logic
     }
 }

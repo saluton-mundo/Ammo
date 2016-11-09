@@ -9,5 +9,6 @@ namespace Ammo.Domain.Repositories.Concrete
 {
     public class BookmarkRepository : BaseRepository, IBookmarkRepository
     {
+        // TODO data access for Bookmarks
     }
 }

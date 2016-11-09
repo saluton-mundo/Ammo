@@ -66,6 +66,7 @@
     <Compile Include="Configuration\Twitter.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\BulletCollectionBullet.cs" />
+    <Compile Include="Entities\DailyLogBullet.cs" />
     <Compile Include="Entities\JournalBookmark.cs" />
     <Compile Include="Entities\Bullet.cs" />
     <Compile Include="Entities\BulletCollection.cs" />
@@ -74,8 +75,10 @@
     <Compile Include="Entities\JournalBulletCollection.cs" />
     <Compile Include="Entities\JournalIndex.cs" />
     <Compile Include="Entities\JournalPage.cs" />
+    <Compile Include="Entities\JournalPageTemplate.cs" />
     <Compile Include="Entities\JournalTag.cs" />
     <Compile Include="Entities\JournalTemplate.cs" />
+    <Compile Include="Entities\MonthlyLogBullet.cs" />
     <Compile Include="Entities\Subscription.cs" />
     <Compile Include="Extensions\ORM\DapperExtensions.cs" />
     <Compile Include="Repositories\Abstract\IBookmarkRepository.cs" />
@@ -132,6 +135,12 @@
     <Compile Include="Repositories\RoleRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ActivityLogViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DailyLogViewModel.cs" />
+    <Compile Include="ViewModels\FutureLogViewModel.cs" />
+    <Compile Include="ViewModels\MoneyLogViewModel.cs" />
+    <Compile Include="ViewModels\MonthlyLogViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

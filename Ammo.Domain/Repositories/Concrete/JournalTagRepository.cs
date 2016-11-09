@@ -9,5 +9,6 @@ namespace Ammo.Domain.Repositories.Concrete
 {
     public class JournalTagRepository : BaseRepository, IJournalTagRepository
     {
+        // TODO data access layer for Journal Tagging
     }
 }

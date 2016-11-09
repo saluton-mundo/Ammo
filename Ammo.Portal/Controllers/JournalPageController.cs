@@ -7,9 +7,11 @@ using System.Web.Mvc;
 namespace Ammo.Portal.Controllers
 {
     [Authorize]
+    [RoutePrefix("Page")]
     public class JournalPageController : BaseController
     {
         // GET: JournalPage
+        [Route("Index")]
         public ActionResult Index(int? PageNo = null)
         {
             if(PageNo == null)

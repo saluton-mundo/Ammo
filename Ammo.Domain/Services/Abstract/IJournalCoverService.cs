@@ -8,5 +8,6 @@ namespace Ammo.Domain.Services.Abstract
 {
     public interface IJournalCoverService
     {
+        // TODO define Journal Cover logic
     }
 }

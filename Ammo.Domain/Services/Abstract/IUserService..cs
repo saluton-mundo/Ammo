@@ -8,5 +8,6 @@ namespace Ammo.Domain.Services.Abstract
 {
     public interface IUserService
     {
+        // TODO implement further improvements to User logic
     }
 }

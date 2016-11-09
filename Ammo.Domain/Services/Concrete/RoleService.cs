@@ -9,5 +9,6 @@ namespace Ammo.Domain.Services.Concrete
 {
     public class RoleService : BaseService, IRoleService
     {
+        // TODO implement role logic 
     }
 }

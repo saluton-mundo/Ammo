@@ -9,5 +9,6 @@ namespace Ammo.Domain.Services.Concrete
 {
     public class JournalCoverService : BaseService, IJournalCoverService
     {
+        // TODO implement Journal Cover logic
     }
 }

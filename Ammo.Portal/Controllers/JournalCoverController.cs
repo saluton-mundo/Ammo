@@ -11,7 +11,9 @@ using System.Web.Mvc;
 
 namespace Ammo.Portal.Controllers
 {
-    public class JournalCoverController : Controller
+    [Authorize]
+    [RoutePrefix("JournalCover")]
+    public class JournalCoverController : BaseController
     {
         private IJournalCoverService _coverService;
 
@@ -21,7 +23,8 @@ namespace Ammo.Portal.Controllers
         }
 
         // GET: JournalCover
-        public HttpResponseMessage Upload(HttpRequestMessage request, int movieId)
+        [Route("Upload")]
+        public HttpResponseMessage Upload(HttpRequestMessage request, int coverid)
         {
             HttpResponseMessage response = null;
 

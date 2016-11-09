@@ -9,5 +9,6 @@ namespace Ammo.Domain.Services.Concrete
 {
     public class BookmarkService : BaseService, IBookmarkService
     {
+        // TODO implement Bookmark logic
     }
 }
