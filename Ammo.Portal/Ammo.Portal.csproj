@@ -193,6 +193,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActivityLogController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BookmarkController.cs" />
     <Compile Include="Controllers\BulletCollectionController.cs" />
@@ -449,6 +450,7 @@
     <Content Include="Views\JournalPage\_MoneyLog.cshtml" />
     <Content Include="Views\JournalPageTemplate\Index.cshtml" />
     <Content Include="Views\JournalPageTemplate\_List.cshtml" />
+    <Content Include="Views\ActivityLog\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ammo.Domain\Ammo.Domain.csproj">

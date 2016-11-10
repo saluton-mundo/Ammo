@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ammo.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace Ammo.Domain.ViewModels
 {
     public class ActivityLogViewModel : BaseViewModel
     {
-        // TODO Decide schema and properties
+        public ActivityLog ActivityLog { get; set; }
+        public IEnumerable<ActivityLogEntry> Entries { get; set; }
+        public IEnumerable<ActivityLogEntryMark> Marks { get; set; }
     }
 }

@@ -64,6 +64,10 @@
     <Compile Include="Configuration\MailChimp.cs" />
     <Compile Include="Configuration\Stripe.cs" />
     <Compile Include="Configuration\Twitter.cs" />
+    <Compile Include="Entities\ActivityLogEntryMark.cs" />
+    <Compile Include="Entities\ActivityLogActivity.cs" />
+    <Compile Include="Entities\ActivityLog.cs" />
+    <Compile Include="Entities\ActivityLogEntry.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\BulletCollectionBullet.cs" />
     <Compile Include="Entities\DailyLogBullet.cs" />
@@ -81,6 +85,7 @@
     <Compile Include="Entities\MonthlyLogBullet.cs" />
     <Compile Include="Entities\Subscription.cs" />
     <Compile Include="Extensions\ORM\DapperExtensions.cs" />
+    <Compile Include="Repositories\Abstract\IActivityLogRepository.cs" />
     <Compile Include="Repositories\Abstract\IBookmarkRepository.cs" />
     <Compile Include="Repositories\Abstract\IBulletCollectionBulletRepository.cs" />
     <Compile Include="Repositories\Abstract\IBulletCollectionRepository.cs" />
@@ -92,6 +97,7 @@
     <Compile Include="Repositories\Abstract\IJournalTemplateRepository.cs" />
     <Compile Include="Repositories\Abstract\ISubscriptionRepository.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\Concrete\ActivityLogRepository.cs" />
     <Compile Include="Repositories\Concrete\BookmarkRepository.cs" />
     <Compile Include="Repositories\Concrete\BulletCollectionBulletRepository.cs" />
     <Compile Include="Repositories\Concrete\BulletCollectionRepository.cs" />
@@ -102,6 +108,7 @@
     <Compile Include="Repositories\Concrete\JournalTagRepository.cs" />
     <Compile Include="Repositories\Concrete\JournalTemplateRepository.cs" />
     <Compile Include="Repositories\Concrete\SubscriptionRepository.cs" />
+    <Compile Include="Services\Abstract\IActivityLogService.cs" />
     <Compile Include="Services\Abstract\IBaseService.cs" />
     <Compile Include="Services\Abstract\IBookmarkService.cs" />
     <Compile Include="Services\Abstract\IBulletCollectionBulletService.cs" />
@@ -115,6 +122,7 @@
     <Compile Include="Services\Abstract\IJournalTemplateService.cs" />
     <Compile Include="Services\Abstract\IRoleService.cs" />
     <Compile Include="Services\Abstract\IUserService..cs" />
+    <Compile Include="Services\Concrete\ActivityLogService.cs" />
     <Compile Include="Services\Concrete\BaseService.cs" />
     <Compile Include="Services\Concrete\BookmarkService.cs" />
     <Compile Include="Services\Concrete\BulletCollectionBulletService.cs" />
