@@ -19,6 +19,23 @@ namespace Ammo.Domain.Entities
         // Activities tracks in this log
         public IEnumerable<ActivityLogActivity> Activities { get; set; }
         // Which month does this log represent
-        public DateTime Month{ get; set; }
+        public DateTime LogMonth{ get; set; }
+
+        public IEnumerable<DateTime> LogDays
+        {
+            get
+            {
+                return CalculateLogDays(LogMonth.Year, LogMonth.Month);
+            }
+        }
+
+        public static IEnumerable<DateTime> CalculateLogDays(int year, int month)
+        {
+            int days = DateTime.DaysInMonth(year, month);
+            for (int day = 1; day <= days; day++)
+            {
+                yield return new DateTime(year, month, day);
+            }
+        }
     }
 }

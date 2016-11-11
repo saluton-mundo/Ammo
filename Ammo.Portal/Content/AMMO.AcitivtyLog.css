@@ -1,0 +1,102 @@
+﻿.activity-log-table {
+}
+
+.activity-log-table-thead {
+}
+
+.activity-log-table-thead-th {
+}
+
+.activity-log-table-thead-tr-th-day {
+    text-align: center;
+}
+
+.activity-log-table-tbody {
+}
+
+.activity-log-table-tbody-td-description {
+    font-size: 13px;
+    text-align:right
+}
+
+.activity-log-table-tbody-tr-td-mark {
+    height: 35px;
+    width: 35px;
+}
+
+.activity-log-legend {
+    padding:35px;
+}
+
+.legend { list-style: none; }
+.legend li { float: left; margin-right: 10px; line-height: 2; }
+.legend span { border: 1px solid #ccc; float: left; width: 35px; height: 35px; margin: 2px; margin-right: 10px; }
+
+.activity-log-marks-div-mark-color {
+    height: 35px;
+    width: 35px;
+    border: 1px solid #bbb;
+}
+
+.activity-log-marks-div-add {
+    background: url(/Assets/icons/add.png) center no-repeat;
+    background-size: cover;
+    height: 35px;
+    width: 35px;
+    border: 1px solid #bbb;
+    cursor:pointer;
+}
+
+@media only screen and (max-width: 800px) {
+
+    /* Force table to not be like tables anymore */
+    .activity-log-table table,
+    .activity-log-table thead,
+    .activity-log-table tbody,
+    .activity-log-table th,
+    .activity-log-table td,
+    .activity-log-table tr {
+        display: block;
+    }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+        .activity-log-table thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+    .activity-log-table tr {
+        border: 1px solid #ccc;
+    }
+
+    .activity-log-table td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align: left;
+    }
+
+        .activity-log-table td:before {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        /*
+	Label the data
+	*/
+        .activity-log-table td:before {
+            content: attr(data-title);
+        }
+}

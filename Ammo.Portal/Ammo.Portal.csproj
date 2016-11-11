@@ -288,6 +288,7 @@
     <Content Include="Assets\images\backet.png" />
     <Content Include="Assets\images\backgrounds\blank-cover.png" />
     <Content Include="Assets\images\backgrounds\profile-placeholder.png" />
+    <Content Include="Content\AMMO.AcitivtyLog.css" />
     <Content Include="Content\AMMO.Bullet.css" />
     <Content Include="Content\AMMO.Calendar.css" />
     <Content Include="Content\AMMO.Fonts.css" />

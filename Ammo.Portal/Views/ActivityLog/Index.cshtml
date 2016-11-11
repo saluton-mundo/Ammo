@@ -9,7 +9,47 @@
     <div class="container">
         <div class="row">
             <div id="journal-page-canvas" class="col-lg-12 col-md-12 col-sm-12 journal-page-canvas">
-                <!-- TODO NEXT UP See card https://trello.com/b/iOP6N0dl/ammo-bullet-journal-app Activity Log -->
+                <!-- Which Months?-->
+                <h1>@Model.ActivityLog.LogMonth.ToString("MMMM yyyy")</h1>
+                <!-- Activity Log -->
+                <div id="activity-log-table">
+                    <table class="col-md-12 table-bordered table-striped table-condensed cf">
+                        <thead class="cf">
+                            <tr>
+                                <th class="activity-log-table-thead-th"></th>
+                                @foreach (DateTime day in Model.ActivityLog.LogDays)
+                                {
+                                    <th class="activity-log-table-thead-tr-th-day">
+                                        @Html.Raw(day.Day)
+                                        @Html.Raw(day.ToString("ddd").Substring(0, 2))
+                                    </th>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody class="activity-log-table-tbody">
+                            @foreach (Ammo.Domain.Entities.ActivityLogActivity activity in Model.ActivityLog.Activities)
+                            {
+                                <tr>
+                                    <td class="activity-log-table-tbody-td-description">@activity.Description</td>
+                                    @foreach (DateTime day in Model.ActivityLog.LogDays)
+                                    {
+                                        <td class="activity-log-table-tbody-tr-td-mark"></td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Mark Picker -->
+                <div class="col-lg-12 col-md-12 col-sm-12 activity-log-legend">
+                    <ul class="legend">
+                        @foreach (Ammo.Domain.Entities.ActivityLogEntryMark mark in Model.Marks)
+                        {
+                            <li><span class="activity-log-marks-div-mark-color" style="background-color:@Html.Raw(mark.Color ?? "#FFF")"></span> @mark.Description</li>
+                        }
+                        <li><span class="activity-log-marks-div-mark-color activity-log-marks-div-add"></span> Add New</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

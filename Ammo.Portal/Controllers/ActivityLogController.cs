@@ -73,7 +73,7 @@ namespace Ammo.Portal.Controllers
                     JournalId = 4,
                     JournalPageNo = 1,
                     JournalPageSortOrder = 1,
-                    Month = DateTime.Now,
+                    LogMonth = DateTime.Now,
                     OwnerId = Startup.Admin
                 },
                 Entries = new List<ActivityLogEntry>(),
