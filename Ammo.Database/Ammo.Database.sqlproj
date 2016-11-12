@@ -120,6 +120,10 @@
     <Build Include="dbo\Stored Procedures\spJournalTemplateDelete.sql" />
     <Build Include="dbo\Stored Procedures\spJournalTemplateAddUpdate.sql" />
     <Build Include="dbo\Tables\JournalTemplateBulletCollection.sql" />
+    <Build Include="dbo\Tables\ActivityLog.sql" />
+    <Build Include="dbo\Stored Procedures\spActivityLogGet.sql" />
+    <Build Include="dbo\Stored Procedures\spActivityLogDelete.sql" />
+    <Build Include="dbo\Stored Procedures\spActivityLogAddUpdate.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Ammo.Database.refactorlog" />

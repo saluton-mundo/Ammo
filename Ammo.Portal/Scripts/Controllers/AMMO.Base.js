@@ -1,6 +1,4 @@
-﻿var app = angular.module('AMMO', []);
-
-/* =================================
+﻿/* =================================
    PRE LOADER
 =================================== */
 // makes sure the whole site is loaded

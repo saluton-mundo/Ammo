@@ -48,6 +48,26 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ClearScript, Version=5.4.8.0, Culture=neutral, PublicKeyToken=935d0c957da47c73, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.V8.2.1.2\lib\net451\ClearScript.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Core, Version=2.1.2.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.Core.2.1.2\lib\net451\JavaScriptEngineSwitcher.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Msie, Version=2.1.2.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.Msie.2.1.2\lib\net451\JavaScriptEngineSwitcher.Msie.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.V8, Version=2.1.2.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.V8.2.1.2\lib\net451\JavaScriptEngineSwitcher.V8.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JSPool, Version=2.0.0.0, Culture=neutral, PublicKeyToken=2fc7775f73072640, processorArchitecture=MSIL">
+      <HintPath>..\packages\JSPool.2.0.0\lib\net451\JSPool.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Bin\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
@@ -57,6 +77,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MsieJavaScriptEngine, Version=2.0.1.0, Culture=neutral, PublicKeyToken=a3a2846a37ac0d3e, processorArchitecture=MSIL">
+      <HintPath>..\packages\MsieJavaScriptEngine.2.0.1\lib\net451\MsieJavaScriptEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -74,11 +98,23 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Owin.Security.Providers.GitHub, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Owin.Security.Providers.GitHub.2.10.0\lib\net45\Owin.Security.Providers.GitHub.dll</HintPath>
+      <HintPath>..\packages\Owin.Security.Providers.GitHub.2.11.0\lib\net45\Owin.Security.Providers.GitHub.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Owin.Security.Providers.Trello, Version=0.1.0.8, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.Security.Providers.Trello.0.1.0.8\lib\net45\Owin.Security.Providers.Trello.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="React.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.Core.3.0.0\lib\net40\React.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="React.Web, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.Web.3.0.0\lib\net40\React.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="React.Web.Mvc4, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.Web.Mvc4.3.0.0\lib\net40\React.Web.Mvc4.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -88,6 +124,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -142,6 +179,10 @@
       <HintPath>..\packages\Twilio.4.7.2\lib\3.5\Twilio.Api.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="VroomJs, Version=1.2.3.0, Culture=neutral, PublicKeyToken=e7c52e67fcb0044f, processorArchitecture=MSIL">
+      <HintPath>..\packages\VroomJs.1.2.3\lib\net45\VroomJs.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
@@ -150,6 +191,7 @@
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.AspNet.Identity.Core">
@@ -189,10 +231,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\ReactConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActivityLogActivityController.cs" />
     <Compile Include="Controllers\ActivityLogController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BookmarkController.cs" />
@@ -325,8 +369,10 @@
     <Content Include="Assets\favicon\favicon-16x16.png" />
     <Content Include="Assets\favicon\favicon-32x32.png" />
     <Content Include="Assets\favicon\favicon-96x96.png" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="Fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Assets\favicon\ms-icon-144x144.png" />
     <Content Include="Assets\favicon\ms-icon-150x150.png" />
@@ -342,9 +388,6 @@
     <Content Include="Scripts\Controllers\AMMO.Form.js" />
     <Content Include="Scripts\Controllers\AMMO.Journal.js" />
     <Content Include="Scripts\Controllers\AMMO.Menu.js" />
-    <Content Include="Scripts\API\angular-mocks.js" />
-    <Content Include="Scripts\API\angular.js" />
-    <Content Include="Scripts\API\angular.min.js" />
     <Content Include="Scripts\API\bootstrap.min.js" />
     <Content Include="Scripts\Controllers\AMMO.Landing.js" />
     <Content Include="Scripts\API\html5shiv.js" />
@@ -365,6 +408,17 @@
     <Content Include="Scripts\API\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\API\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\Controllers\AMMO.Modal.js" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <None Include="Scripts\API\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\API\jquery-3.1.1.js" />
+    <Content Include="Scripts\API\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\API\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\API\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\ViewControllers\AMMO.ActivityLog.jsx" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -409,7 +463,7 @@
     <Folder Include="Media\ImageUploads\Bullets\" />
     <Folder Include="Media\TemplateUploads\" />
     <Folder Include="Media\VideoUploads\" />
-    <Folder Include="Scripts\Services\" />
+    <Folder Include="Views\ActivityLogActivity\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\fonts\glyphicons-halflings-regular.woff" />
@@ -420,17 +474,11 @@
     <Content Include="Assets\fonts\iconic-font.ttf" />
     <Content Include="Assets\fonts\iconic-font.woff" />
     <Content Include="Assets\favicon\manifest.json" />
-    <Content Include="Fonts\FontAwesome.otf" />
-    <Content Include="Fonts\fontawesome-webfont.woff2" />
-    <Content Include="Fonts\fontawesome-webfont.woff" />
-    <Content Include="Fonts\fontawesome-webfont.ttf" />
-    <Content Include="Fonts\fontawesome-webfont.eot" />
     <Content Include="Ammo.Development.Environment.config" />
     <Content Include="Areas\Admin\Views\web.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Journals\Index.cshtml" />
     <Content Include="Views\Shared\_LoggedInLayout.cshtml" />
-    <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Views\Journal\_Detail.cshtml" />
     <Content Include="Views\Bookmark\List.cshtml" />
     <Content Include="Views\Calendar\Index.cshtml" />
@@ -452,6 +500,8 @@
     <Content Include="Views\JournalPageTemplate\Index.cshtml" />
     <Content Include="Views\JournalPageTemplate\_List.cshtml" />
     <Content Include="Views\ActivityLog\Index.cshtml" />
+    <Content Include="Scripts\API\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\API\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ammo.Domain\Ammo.Domain.csproj">

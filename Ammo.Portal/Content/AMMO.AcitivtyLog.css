@@ -1,11 +1,17 @@
 ﻿.activity-log-table {
 }
-
+.activity-log-margin-25 {
+   margin-top: 25px;
+}
 .activity-log-table-thead {
 }
 
 .activity-log-table-thead-th {
+    text-align:center;
 }
+    .activity-log-table-thead-th-img {
+        height:35px;
+    }
 
 .activity-log-table-thead-tr-th-day {
     text-align: center;
@@ -22,6 +28,7 @@
 .activity-log-table-tbody-tr-td-mark {
     height: 35px;
     width: 35px;
+    cursor:pointer;
 }
 
 .activity-log-legend {

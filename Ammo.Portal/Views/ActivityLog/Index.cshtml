@@ -13,10 +13,10 @@
                 <h1>@Model.ActivityLog.LogMonth.ToString("MMMM yyyy")</h1>
                 <!-- Activity Log -->
                 <div id="activity-log-table">
-                    <table class="col-md-12 table-bordered table-striped table-condensed cf">
+                    <table class="col-md-12 table-bordered table-striped table-condensed cf activity-log-margin-25">
                         <thead class="cf">
                             <tr>
-                                <th class="activity-log-table-thead-th"></th>
+                                <th class="activity-log-table-thead-th"><a href="javascript:void(0)"><img class="activity-log-table-thead-th-img" src="~/Assets/icons/add.png" /></a></th>
                                 @foreach (DateTime day in Model.ActivityLog.LogDays)
                                 {
                                     <th class="activity-log-table-thead-tr-th-day">
@@ -33,13 +33,30 @@
                                     <td class="activity-log-table-tbody-td-description">@activity.Description</td>
                                     @foreach (DateTime day in Model.ActivityLog.LogDays)
                                     {
-                                        <td class="activity-log-table-tbody-tr-td-mark"></td>
+                                        Ammo.Domain.Entities.ActivityLogEntry entry = Model.Entries.Where(e => e.ActivityLogEntryDate.Date == day.Date && e.ActivityId == activity.ActivityId).FirstOrDefault();
+
+                                        if (entry != null)
+                                        {
+                                            <td data-entry-date="@entry.ActivityLogEntryDate" class="activity-log-table-tbody-tr-td-mark" style="background-color: @entry.Mark.Color"></td>
+                                        }
+                                        else
+                                        {
+                                            <td data-entry-date="@day.Date" class="activity-log-table-tbody-tr-td-mark"></td>
+                                        }
                                     }
                                 </tr>
                             }
                         </tbody>
                     </table>
                 </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 heading-block activity-log-margin-25">
+                    <h3>
+                        Activity Key
+                        <small class="whats-this" id="whats-this-3">What's this?</small>
+                        <!--TODO Customize -->
+                        <a href="javascript:void(0)" class="journal-index-customize-a "><img class="journal-index-customize-a-img" src="~/Assets/icons/settings.png" /></a>
+                    </h3>
+                </div> <!-- /.heading-block -->
                 <!-- Mark Picker -->
                 <div class="col-lg-12 col-md-12 col-sm-12 activity-log-legend">
                     <ul class="legend">

@@ -14,7 +14,6 @@ namespace Ammo.Portal
                         "~/Scripts/API/modernizr.custom.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/base").Include(
-                        "~/Scripts/API/angular.min.js",
                         "~/Scripts/Controllers/AMMO.Base.js",
                         "~/Scripts/Controllers/AMMO.Modal.js",
                         "~/Scripts/Controllers/AMMO.Form.js"));
