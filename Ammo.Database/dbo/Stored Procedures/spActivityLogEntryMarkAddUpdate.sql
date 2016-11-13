@@ -1,10 +1,12 @@
-﻿CREATE PROCEDURE [dbo].[spBulletCollectionBulletAddUpdate]
-    @BULLETCOLLECTIONID INT
-    ,@BULLETID INT
-    ,@SESSIONUSERID UNIQUEIDENTIFIER
+﻿CREATE PROCEDURE [dbo].[spActivityLogEntryMarkAddUpdate]
+	@ACTIVITYLOGENTRYMARKID		INT
+	,@ACTIVITYLOGID				INT
+	,@DESCRIPTION				NVARCHAR(100)
+	,@COLOR						NVARCHAR(7)
+	,@SESSIONUSERID				UNIQUEIDENTIFIER
 AS
 BEGIN
-	SET NOCOUNT ON;
+SET NOCOUNT ON;
     SET XACT_ABORT,
         QUOTED_IDENTIFIER,
         ANSI_NULLS,
@@ -15,24 +17,26 @@ BEGIN
     SET NUMERIC_ROUNDABORT OFF;
 
 	BEGIN TRY
-		IF EXISTS(SELECT 1 FROM BulletCollectionBullet WHERE BulletCollectionId = @BULLETCOLLECTIONID AND BulletId = @BULLETID) 
+		IF EXISTS(SELECT 1 FROM ActivityLogEntryMark WHERE ActivityLogEntryMarkId = @ACTIVITYLOGENTRYMARKID) 
 			BEGIN
 				UPDATE 
-					BulletCollectionBullet
+					ActivityLogEntryMark
 				SET 
 					Deleted = 'False'
+					,Color = ISNULL(@COLOR, Color)
+					,[Description] = ISNULL(@DESCRIPTION, [Description]) 
 					,LastActionDate = GETDATE()
 					,LastActionUserId = @SESSIONUSERID
 				WHERE 
-					BulletCollectionId = @BULLETCOLLECTIONID
-					AND BulletId = @BULLETID
+					ActivityLogEntryMarkId = @ACTIVITYLOGENTRYMARKID
 			END
 		ELSE
 			BEGIN 
-				INSERT INTO BulletCollectionBullet
+				INSERT INTO ActivityLogEntryMark
 				(
-					BulletCollectionId
-					,BulletId
+					ActivityLogId
+					,[Description]
+					,Color
 					,Deleted
 					,CreateDate
 					,LastActionDate
@@ -41,8 +45,9 @@ BEGIN
 				)
 				VALUES
 				(
-					@BULLETCOLLECTIONID
-					,@BULLETID
+					@ACTIVITYLOGID
+					,@DESCRIPTION
+					,@COLOR
 					,'False'
 					,GETDATE()
 					,GETDATE()
@@ -64,4 +69,4 @@ BEGIN
 
 		--THROW --if on SQL2012 or above	
 	END CATCH
-END	
+END

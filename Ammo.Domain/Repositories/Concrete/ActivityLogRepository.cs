@@ -15,12 +15,37 @@ namespace Ammo.Domain.Repositories.Concrete
     {
         public int AddUpdate(ActivityLog Log, string SessionUserId)
         {
-            throw new NotImplementedException();
+            using(var connection = new SqlConnection(base.ConnectionString))
+            {
+                return Task.FromResult(connection.ExecuteScalar<int>("spActivityLogAddUpdate",
+                                                                     new
+                                                                     {
+                                                                         @ACTIVITYLOGID = Log.ActivityLogId,
+                                                                         @JOURNALID = Log.JournalId,
+                                                                         @OWNERID = Guid.Parse(Log.OwnerId),
+                                                                         @ACTIVITYLOGMONTH = Log.LogMonth,
+                                                                         @SESSIONUSERID = Guid.Parse(SessionUserId)
+                                                                     },
+                                                                     null,
+                                                                     null,
+                                                                     CommandType.StoredProcedure)).Result;
+            }
         }
 
         public int Delete(int ActivityLogId, string SessionUserId)
         {
-            throw new NotImplementedException();
+            using(var connection = new SqlConnection(base.ConnectionString))
+            {
+                return Task.FromResult(connection.ExecuteScalar<int>("spActivityLogDelete",
+                                                                     new
+                                                                     {
+                                                                         @ACTIVITYLOGID = ActivityLogId,
+                                                                         @SESSIONUSERID = Guid.Parse(SessionUserId)
+                                                                     },
+                                                                     null,
+                                                                     null,
+                                                                     CommandType.StoredProcedure)).Result;
+            }
         }
 
         public IEnumerable<ActivityLog> Get(int? ActivityLogId, int? JournalId)

@@ -1,9 +1,10 @@
-﻿CREATE PROCEDURE [dbo].[spBulletCollectionBulletAddUpdate]
-    @BULLETCOLLECTIONID INT
-    ,@BULLETID INT
-    ,@SESSIONUSERID UNIQUEIDENTIFIER
+﻿CREATE PROCEDURE [dbo].[spActivityLogActivityAddUpdate]
+	@ACTIVITYLOGACTIVITYID		INT,
+    @ACTIVITYLOGID				INT,
+    @DESCRIPTION				NVARCHAR(100),
+    @SESSIONUSERID				UNIQUEIDENTIFIER
 AS
-BEGIN
+BEGIN 
 	SET NOCOUNT ON;
     SET XACT_ABORT,
         QUOTED_IDENTIFIER,
@@ -15,24 +16,24 @@ BEGIN
     SET NUMERIC_ROUNDABORT OFF;
 
 	BEGIN TRY
-		IF EXISTS(SELECT 1 FROM BulletCollectionBullet WHERE BulletCollectionId = @BULLETCOLLECTIONID AND BulletId = @BULLETID) 
+		IF EXISTS(SELECT 1 FROM ActivityLogActivity WHERE ActivityId = ActivityId) 
 			BEGIN
 				UPDATE 
-					BulletCollectionBullet
+					ActivityLogActivity
 				SET 
 					Deleted = 'False'
+					,[Description] = ISNULL(@DESCRIPTION, [Description]) 
 					,LastActionDate = GETDATE()
 					,LastActionUserId = @SESSIONUSERID
 				WHERE 
-					BulletCollectionId = @BULLETCOLLECTIONID
-					AND BulletId = @BULLETID
+					ActivityId = @ACTIVITYLOGACTIVITYID
 			END
 		ELSE
 			BEGIN 
-				INSERT INTO BulletCollectionBullet
+				INSERT INTO ActivityLogActivity
 				(
-					BulletCollectionId
-					,BulletId
+					ActivityLogId
+					,[Description]
 					,Deleted
 					,CreateDate
 					,LastActionDate
@@ -41,8 +42,8 @@ BEGIN
 				)
 				VALUES
 				(
-					@BULLETCOLLECTIONID
-					,@BULLETID
+					@ACTIVITYLOGID
+					,@DESCRIPTION
 					,'False'
 					,GETDATE()
 					,GETDATE()
@@ -64,4 +65,4 @@ BEGIN
 
 		--THROW --if on SQL2012 or above	
 	END CATCH
-END	
+END

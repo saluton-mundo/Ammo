@@ -8,6 +8,7 @@ namespace Ammo.Domain.Entities
 {
     public class ActivityLog : BaseEntity
     {
+        public int ActivityLogId { get; set; }
         // Who owns this activity log
         public string OwnerId { get; set; }
         // Which journal does this log belong to
