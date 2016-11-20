@@ -10,8 +10,9 @@ namespace Ammo.Domain.Entities
     {
         public int ActivityLogEntryId { get; set; }
         public int ActivityLogId { get; set; }
+        public int ActivityLogEntryMarkId { get; set; }
         public int ActivityId { get; set; }
-        public DateTime ActivityLogEntryDate { get; set; }
+        public DateTime EntryDate { get; set; }
         public ActivityLogEntryMark Mark { get; set; }
     }
 }

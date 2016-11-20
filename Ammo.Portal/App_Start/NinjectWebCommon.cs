@@ -72,6 +72,7 @@ namespace Ammo.Portal.App_Start
         {
             kernel.Bind<IActivityLogService>().To<ActivityLogService>();
             kernel.Bind<IActivityLogActivityService>().To<ActivityLogActivityService>();
+            kernel.Bind<IActivityLogEntryService>().To<ActivityLogEntryService>();
             kernel.Bind<IActivityLogEntryMarkService>().To<ActivityLogEntryMarkService>();
             kernel.Bind<IBaseService>().To<BaseService>();
             kernel.Bind<IBookmarkService>().To<BookmarkService>();
@@ -90,6 +91,7 @@ namespace Ammo.Portal.App_Start
         {
             kernel.Bind<IActivityLogRepository>().To<ActivityLogRepository>();
             kernel.Bind<IActivityLogActivityRepository>().To<ActivityLogActivityRepository>();
+            kernel.Bind<IActivityLogEntryRepository>().To<ActivityLogEntryRepository>();
             kernel.Bind<IActivityLogEntryMarkRepository>().To<ActivityLogEntryMarkRepository>();
             kernel.Bind<IBookmarkRepository>().To<BookmarkRepository>();
             kernel.Bind<IBulletRepository>().To<BulletRepository>();

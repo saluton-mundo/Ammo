@@ -87,6 +87,7 @@
     <Compile Include="Extensions\ORM\DapperExtensions.cs" />
     <Compile Include="Repositories\Abstract\IActivityLogActivityRepository.cs" />
     <Compile Include="Repositories\Abstract\IActivityLogEntryMarkRepository.cs" />
+    <Compile Include="Repositories\Abstract\IActivityLogEntryRepository.cs" />
     <Compile Include="Repositories\Abstract\IActivityLogRepository.cs" />
     <Compile Include="Repositories\Abstract\IBookmarkRepository.cs" />
     <Compile Include="Repositories\Abstract\IBulletCollectionBulletRepository.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\Concrete\ActivityLogActivityRepository.cs" />
     <Compile Include="Repositories\Concrete\ActivityLogEntryMarkRepository.cs" />
+    <Compile Include="Repositories\Concrete\ActivityLogEntryRepository.cs" />
     <Compile Include="Repositories\Concrete\ActivityLogRepository.cs" />
     <Compile Include="Repositories\Concrete\BookmarkRepository.cs" />
     <Compile Include="Repositories\Concrete\BulletCollectionBulletRepository.cs" />
@@ -114,6 +116,7 @@
     <Compile Include="Repositories\Concrete\SubscriptionRepository.cs" />
     <Compile Include="Services\Abstract\IActivityLogActivityService.cs" />
     <Compile Include="Services\Abstract\IActivityLogEntryMarkService.cs" />
+    <Compile Include="Services\Abstract\IActivityLogEntryService.cs" />
     <Compile Include="Services\Abstract\IActivityLogService.cs" />
     <Compile Include="Services\Abstract\IBaseService.cs" />
     <Compile Include="Services\Abstract\IBookmarkService.cs" />
@@ -130,6 +133,7 @@
     <Compile Include="Services\Abstract\IUserService..cs" />
     <Compile Include="Services\Concrete\ActivityLogActivityService.cs" />
     <Compile Include="Services\Concrete\ActivityLogEntryMarkService.cs" />
+    <Compile Include="Services\Concrete\ActivityLogEntryService.cs" />
     <Compile Include="Services\Concrete\ActivityLogService.cs" />
     <Compile Include="Services\Concrete\BaseService.cs" />
     <Compile Include="Services\Concrete\BookmarkService.cs" />
@@ -151,6 +155,7 @@
     <Compile Include="Repositories\RoleRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ActivityLogEntryViewModel.cs" />
     <Compile Include="ViewModels\ActivityLogViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DailyLogViewModel.cs" />

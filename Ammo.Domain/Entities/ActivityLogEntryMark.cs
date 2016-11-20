@@ -15,6 +15,7 @@ namespace Ammo.Domain.Entities
         [StringLength(100, ErrorMessage = "Descriptions must be less than 100 characters long...")]
         public string Description { get; set; }
         [Required]
+        
         [StringLength(7, ErrorMessage = "Selection must be a valid HEX color", MinimumLength = 7)]
         public string Color { get; set; }
     }

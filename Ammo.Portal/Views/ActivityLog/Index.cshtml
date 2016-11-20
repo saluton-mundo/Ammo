@@ -1,51 +1,30 @@
-﻿@model Ammo.Domain.ViewModels.ActivityLogViewModel
-
-@{
+﻿@{
     ViewBag.Title = "Activity Log";
     Layout = "~/Views/Shared/_LoggedInJournalLayout.cshtml";
 }
-
 <section id="journal-page">
-    <div class="container">
+    <div class="container" ng-controller="ActivityLogController">
         <div class="row">
             <div id="journal-page-canvas" class="col-lg-12 col-md-12 col-sm-12 journal-page-canvas">
                 <!-- Which Months?-->
-                <h1>@Model.ActivityLog.LogMonth.ToString("MMMM yyyy")</h1>
+                <h1>{{getDate(model.ActivityLog.LogMonth, 'MMMM YYYY')}}</h1>
                 <!-- Activity Log -->
                 <div id="activity-log-table">
                     <table class="col-md-12 table-bordered table-striped table-condensed cf activity-log-margin-25">
                         <thead class="cf">
                             <tr>
                                 <th class="activity-log-table-thead-th"><a href="javascript:void(0)"><img class="activity-log-table-thead-th-img" src="~/Assets/icons/add.png" /></a></th>
-                                @foreach (DateTime day in Model.ActivityLog.LogDays)
-                                {
-                                    <th class="activity-log-table-thead-tr-th-day">
-                                        @Html.Raw(day.Day)
-                                        @Html.Raw(day.ToString("ddd").Substring(0, 2))
-                                    </th>
-                                }
+                                <th ng-repeat="day in model.ActivityLog.LogDays" class="activity-log-table-thead-tr-th-day">
+                                    {{getDate(day, 'dd')}}
+                                    {{getDate(day, 'D')}}
+                                </th>
                             </tr>
                         </thead>
                         <tbody class="activity-log-table-tbody">
-                            @foreach (Ammo.Domain.Entities.ActivityLogActivity activity in Model.ActivityLog.Activities)
-                            {
-                                <tr>
-                                    <td class="activity-log-table-tbody-td-description">@activity.Description</td>
-                                    @foreach (DateTime day in Model.ActivityLog.LogDays)
-                                    {
-                                        Ammo.Domain.Entities.ActivityLogEntry entry = Model.Entries.Where(e => e.ActivityLogEntryDate.Date == day.Date && e.ActivityId == activity.ActivityId).FirstOrDefault();
-
-                                        if (entry != null)
-                                        {
-                                            <td data-entry-date="@entry.ActivityLogEntryDate" class="activity-log-table-tbody-tr-td-mark" style="background-color: @entry.Mark.Color"></td>
-                                        }
-                                        else
-                                        {
-                                            <td data-entry-date="@day.Date" class="activity-log-table-tbody-tr-td-mark"></td>
-                                        }
-                                    }
-                                </tr>
-                            }
+                            <tr ng-repeat="activity in model.ActivityLog.Activities">
+                                <td class="activity-log-table-tbody-td-description">{{activity.Description}}</td>
+                                <td ng-repeat="day in model.EntryViewModel" class="activity-log-table-tbody-tr-td-mark" style="background-color:{{day.Entry.Mark.Color}}"></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -60,10 +39,9 @@
                 <!-- Mark Picker -->
                 <div class="col-lg-12 col-md-12 col-sm-12 activity-log-legend">
                     <ul class="legend">
-                        @foreach (Ammo.Domain.Entities.ActivityLogEntryMark mark in Model.Marks)
-                        {
-                            <li><span class="activity-log-marks-div-mark-color" style="background-color:@Html.Raw(mark.Color ?? "#FFF")"></span> @mark.Description</li>
-                        }
+                        <li ng-repeat="mark in model.Marks">
+                            <span class="activity-log-marks-div-mark-color" style="background-color:{{mark.Color}}"></span> {{mark.Description}}
+                        </li>
                         <li><span class="activity-log-marks-div-mark-color activity-log-marks-div-add"></span> Add New</li>
                     </ul>
                 </div>

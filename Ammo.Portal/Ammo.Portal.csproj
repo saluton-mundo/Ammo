@@ -48,26 +48,6 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ClearScript, Version=5.4.8.0, Culture=neutral, PublicKeyToken=935d0c957da47c73, processorArchitecture=MSIL">
-      <HintPath>..\packages\JavaScriptEngineSwitcher.V8.2.1.2\lib\net451\ClearScript.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="JavaScriptEngineSwitcher.Core, Version=2.1.2.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
-      <HintPath>..\packages\JavaScriptEngineSwitcher.Core.2.1.2\lib\net451\JavaScriptEngineSwitcher.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="JavaScriptEngineSwitcher.Msie, Version=2.1.2.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
-      <HintPath>..\packages\JavaScriptEngineSwitcher.Msie.2.1.2\lib\net451\JavaScriptEngineSwitcher.Msie.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="JavaScriptEngineSwitcher.V8, Version=2.1.2.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
-      <HintPath>..\packages\JavaScriptEngineSwitcher.V8.2.1.2\lib\net451\JavaScriptEngineSwitcher.V8.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="JSPool, Version=2.0.0.0, Culture=neutral, PublicKeyToken=2fc7775f73072640, processorArchitecture=MSIL">
-      <HintPath>..\packages\JSPool.2.0.0\lib\net451\JSPool.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Bin\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
@@ -103,18 +83,6 @@
     </Reference>
     <Reference Include="Owin.Security.Providers.Trello, Version=0.1.0.8, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.Security.Providers.Trello.0.1.0.8\lib\net45\Owin.Security.Providers.Trello.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="React.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
-      <HintPath>..\packages\React.Core.3.0.0\lib\net40\React.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="React.Web, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
-      <HintPath>..\packages\React.Web.3.0.0\lib\net40\React.Web.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="React.Web.Mvc4, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
-      <HintPath>..\packages\React.Web.Mvc4.3.0.0\lib\net40\React.Web.Mvc4.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -179,10 +147,6 @@
       <HintPath>..\packages\Twilio.4.7.2\lib\3.5\Twilio.Api.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="VroomJs, Version=1.2.3.0, Culture=neutral, PublicKeyToken=e7c52e67fcb0044f, processorArchitecture=MSIL">
-      <HintPath>..\packages\VroomJs.1.2.3\lib\net45\VroomJs.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
@@ -231,7 +195,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
-    <Compile Include="App_Start\ReactConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
@@ -263,6 +226,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\Controllers\AMMO.ActivityLogController.js" />
+    <Content Include="Scripts\Controllers\AMMO.App.js" />
     <Content Include="Assets\favicon\android-icon-144x144.png" />
     <Content Include="Assets\favicon\android-icon-192x192.png" />
     <Content Include="Assets\favicon\android-icon-36x36.png" />
@@ -379,6 +344,9 @@
     <Content Include="Assets\favicon\ms-icon-310x310.png" />
     <Content Include="Assets\favicon\ms-icon-70x70.png" />
     <Content Include="Media\ImageUploads\JournalCovers\blank-cover.png" />
+    <Content Include="Scripts\API\angular-mocks.js" />
+    <Content Include="Scripts\API\angular.js" />
+    <Content Include="Scripts\API\angular.min.js" />
     <Content Include="Scripts\API\classie.js" />
     <Content Include="Scripts\API\css-filters-polyfill.js" />
     <Content Include="Scripts\API\cssParser.js" />
@@ -413,11 +381,16 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Scripts\API\angular.min.js.map" />
     <None Include="Scripts\API\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\API\jquery-3.1.1.js" />
     <Content Include="Scripts\API\jquery-3.1.1.min.js" />
     <Content Include="Scripts\API\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\API\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\API\moment-with-locales.js" />
+    <Content Include="Scripts\API\moment-with-locales.min.js" />
+    <Content Include="Scripts\API\moment.js" />
+    <Content Include="Scripts\API\moment.min.js" />
     <Content Include="Scripts\ViewControllers\AMMO.ActivityLog.jsx" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
@@ -456,6 +429,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\" />
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />

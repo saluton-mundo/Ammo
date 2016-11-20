@@ -11,19 +11,25 @@ namespace Ammo.Portal
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/API/jquery-1.11.3.min.js",
                         "~/Scripts/API/jquery.unobtrusive-ajax.min.js",
+                        "~/Scripts/API/moment.min.js",
                         "~/Scripts/API/modernizr.custom.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/base").Include(
+                        "~/Scripts/API/angular.min.js",
+                        "~/Scripts/Controllers/AMMO.App.js",
                         "~/Scripts/Controllers/AMMO.Base.js",
                         "~/Scripts/Controllers/AMMO.Modal.js",
                         "~/Scripts/Controllers/AMMO.Form.js"));
 
-           bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/API/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                         "~/Scripts/API/jquery.validate*"));
 
             bundles.Add(new StyleBundle("~/bundles/ammo-journal").Include(
-                        "~/Scripts/Controllers/AMMO.Journal.js",
-                        "~/Scripts/Controllers/AMMO.Menu.js"));
+                         "~/Scripts/Controllers/AMMO.Journal.js",
+                         "~/Scripts/Controllers/AMMO.Menu.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ammo-controllers").IncludeDirectory(
+                         "~/Scripts/Controllers", "*.js", true));
 
             bundles.Add(new ScriptBundle("~/bundles/landing").Include(
                       "~/Scripts/API/jquery-{version}.min.js",

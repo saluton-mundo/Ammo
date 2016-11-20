@@ -24,7 +24,14 @@ namespace Ammo.Portal.Controllers
         [Route("Index")]
         public ActionResult Index()
         {
-            return View("Index", CreateDebugViewModel());
+            return View("Index");
+        }
+
+
+        [Route("Get")]
+        public ActionResult Get()
+        {
+            return Json(CreateDebugViewModel(), JsonRequestBehavior.AllowGet);
         }
 
 
@@ -68,10 +75,10 @@ namespace Ammo.Portal.Controllers
         {
             List<ActivityLogEntry> entries = new List<ActivityLogEntry>();
 
-            ActivityLogEntry entry1 = new ActivityLogEntry() { ActivityId = 1, ActivityLogEntryId = 1, ActivityLogId = 1, ActivityLogEntryDate = new DateTime(2016, 11, 7), Mark = new ActivityLogEntryMark() { ActivityEntryLogMarkId = 1, ActivityLogId = 1, Color = "#38c695", Description = "Did It!" } };
-            ActivityLogEntry entry2 = new ActivityLogEntry() { ActivityId = 1, ActivityLogEntryId = 2, ActivityLogId = 1, ActivityLogEntryDate = new DateTime(2016, 11, 8), Mark = new ActivityLogEntryMark() { ActivityEntryLogMarkId = 1, ActivityLogId = 1, Color = "#38c695", Description = "Did It!" } };
-            ActivityLogEntry entry3 = new ActivityLogEntry() { ActivityId = 2, ActivityLogEntryId = 3, ActivityLogId = 1, ActivityLogEntryDate = new DateTime(2016, 11, 8), Mark = new ActivityLogEntryMark() { ActivityEntryLogMarkId = 1, ActivityLogId = 1, Color = "#38c695", Description = "Did It!" } };
-            ActivityLogEntry entry4 = new ActivityLogEntry() { ActivityId = 2, ActivityLogEntryId = 4, ActivityLogId = 1, ActivityLogEntryDate = new DateTime(2016, 11, 9), Mark = new ActivityLogEntryMark() { ActivityEntryLogMarkId = 1, ActivityLogId = 1, Color = "#38c695", Description = "Did It!" } };
+            ActivityLogEntry entry1 = new ActivityLogEntry() { ActivityId = 1, ActivityLogEntryId = 1, ActivityLogId = 1, EntryDate = new DateTime(2016, 11, 7), Mark = new ActivityLogEntryMark() { ActivityEntryLogMarkId = 1, ActivityLogId = 1, Color = "#38c695", Description = "Did It!" } };
+            ActivityLogEntry entry2 = new ActivityLogEntry() { ActivityId = 1, ActivityLogEntryId = 2, ActivityLogId = 1, EntryDate = new DateTime(2016, 11, 8), Mark = new ActivityLogEntryMark() { ActivityEntryLogMarkId = 1, ActivityLogId = 1, Color = "#38c695", Description = "Did It!" } };
+            ActivityLogEntry entry3 = new ActivityLogEntry() { ActivityId = 2, ActivityLogEntryId = 3, ActivityLogId = 1, EntryDate = new DateTime(2016, 11, 8), Mark = new ActivityLogEntryMark() { ActivityEntryLogMarkId = 1, ActivityLogId = 1, Color = "#38c695", Description = "Did It!" } };
+            ActivityLogEntry entry4 = new ActivityLogEntry() { ActivityId = 2, ActivityLogEntryId = 4, ActivityLogId = 1, EntryDate = new DateTime(2016, 11, 9), Mark = new ActivityLogEntryMark() { ActivityEntryLogMarkId = 1, ActivityLogId = 1, Color = "#38c695", Description = "Did It!" } };
             entries.Add(entry1);
             entries.Add(entry2);
             entries.Add(entry3);
